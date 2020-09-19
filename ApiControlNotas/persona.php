@@ -94,7 +94,8 @@ $app->post('/persona', function() use($app, $db){
             $data['direccion']=null;
         }
 
-        $query = "INSERT INTO tblPersona VALUES(NULL,".
+        $query = "INSERT INTO tblPersona VALUES(".
+		    "'{$data['ci']}',".
             "'{$data['nombre']}',".
             "'{$data['apellido']}',".
             "'{$data['telefono']}',".
@@ -122,8 +123,8 @@ $app->put('/persona/:id', function($id) use($db, $app){
 
     $sql = "UPDATE tblPersona SET ".
         "nombre = '{$data["nombre"]}', ".
-        "apellido = '{$data["apellido"]}', ";
-		"telefono = '{$data["telefono"]}', ";
+        "apellido = '{$data["apellido"]}', ".
+		"telefono = '{$data["telefono"]}', ".
 		"direccion = '{$data["direccion"]}', ";
 
     $query = $db->query($sql);
@@ -148,7 +149,7 @@ $app->put('/persona/:id', function($id) use($db, $app){
 
 // ELIMINAR UN PERSONA
 $app->delete('/persona/:id', function($id) use($db, $app){
-    $sql = 'DELETE FROM persona WHERE id = '.$id;
+    $sql = 'DELETE FROM persona WHERE ci = '.$id;
     $query = $db->query($sql);
 
     if($query){
