@@ -41,3 +41,5 @@ $app->get("/probando", function() use($app){
 
 
 $app->run();
+
+?>
