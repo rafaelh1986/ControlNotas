@@ -10,7 +10,7 @@ require_once 'vendor/autoload.php';
 
 $app = new \Slim\Slim();
 
-$db = new mysqli('localhost', 'root', '', 'notasBD');
+$db = new mysqli('remotemysql.com', 'ichSCkKVhV', 'flkdNFpFa4', 'ichSCkKVhV');
 
 // Configuración de cabeceras
 header('Access-Control-Allow-Origin: *');
@@ -29,9 +29,9 @@ $app->get('/actividad', function() use($db, $app){
     $sql = 'SELECT * FROM tblActividad ORDER BY id DESC;';
     $query = $db->query($sql);
 
-    $actividad = array();
+    $actividades = array();
     while ($actividad = $query->fetch_assoc()) {
-        $actividad[] = $actividad;
+        $actividades[] = $actividad;
     }
 
     $result = array(
@@ -89,6 +89,10 @@ $app->post('/actividad', function() use($app, $db){
         if(!isset($data['fecha'])){
             $data['fecha']=null;
         }
+		
+		if(!isset($data['idgrupomateria'])){
+            $data['idgrupomateria']=null;
+        }
 
         if(!isset($data['estado'])){
             $data['estado']=null;
@@ -98,6 +102,7 @@ $app->post('/actividad', function() use($app, $db){
             "'{$data['descripcion']}',".
             "'{$data['puntaje']}',".
             "'{$data['fecha']}',".
+			"'{$data['idgrupomateria']}',".
             "'{$data['estado']}'".
             ");";
 
@@ -124,7 +129,8 @@ $app->put('/actividad/:id', function($id) use($db, $app){
         "descripcion = '{$data["descripcion"]}', ".
         "puntaje = '{$data["puntaje"]}', ";
 		"fecha = '{$data["fecha"]}', ";
-		"estado = '{$data["estado"]}', ";
+		"idgrupomateria = '{$data["idgrupomateria"]}', ";
+		"estado = '{$data["estado"]}' WHERE id = {$id} ";
 
     $query = $db->query($sql);
 

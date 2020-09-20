@@ -1,0 +1,400 @@
+{
+	"id": "7feee879-36b8-5a31-d742-b58baa3e668e",
+	"name": "AControlNotas",
+	"description": "",
+	"order": [
+		"cf2bb1ea-eeb3-e8ff-413c-8ef59f491722",
+		"78020438-8044-9fad-3b3e-9dce7f2fe020"
+	],
+	"folders": [
+		{
+			"name": "Actividad",
+			"description": "",
+			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
+			"order": [
+				"7ea18668-1056-f754-d9b6-4b98deabda64",
+				"d2361753-0305-1685-de62-50000969dd35",
+				"97378b83-d0b4-1e56-9f16-861dc757ff75",
+				"50b33225-e9bf-bd95-2f0f-84808ce584db",
+				"6dd00550-eca2-2343-8c15-485dcc9dee9d"
+			],
+			"owner": "12743820",
+			"folders_order": [],
+			"id": "4f97c0b3-438b-ca7c-add5-f45114d17010"
+		},
+		{
+			"name": "Persona",
+			"description": "",
+			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
+			"order": [
+				"ca2133f6-323e-2556-5448-cdef0e33e328",
+				"d1cc8eb4-63fd-52a2-d0a3-5a6cf8551903",
+				"9ae374bd-e7e0-b769-aa64-e0b7a1e2270e",
+				"24d6b74b-cd81-91c8-31fb-71bc0eb33a6e",
+				"b28aec96-39cf-2603-6159-d659d758800f"
+			],
+			"owner": "12743820",
+			"folders_order": [],
+			"id": "80cac363-0efc-dfb3-4a84-8322c8eec376"
+		}
+	],
+	"folders_order": [
+		"4f97c0b3-438b-ca7c-add5-f45114d17010",
+		"80cac363-0efc-dfb3-4a84-8322c8eec376"
+	],
+	"timestamp": 1555508558795,
+	"owner": "12743820",
+	"public": false,
+	"requests": [
+		{
+			"id": "24d6b74b-cd81-91c8-31fb-71bc0eb33a6e",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/ApiControlNotas/persona.php/persona/478935",
+			"folder": "80cac363-0efc-dfb3-4a84-8322c8eec376",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1600558244893,
+			"name": "Actualizar json de PERSONA",
+			"description": "",
+			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
+			"responses": [],
+			"rawModeData": "{\n   \"nombre\":\"Rosalia\",\n   \"apellidos\":\"Bejarano\",\n   \"telefono\":\"64453333\",\n   \"direccion\":\"C\\/ Sucre\"\n}"
+		},
+		{
+			"id": "50b33225-e9bf-bd95-2f0f-84808ce584db",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/ApiDemo/producto.php/productos/1",
+			"folder": "4f97c0b3-438b-ca7c-add5-f45114d17010",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1600372150222,
+			"name": "Actualizar json de ACTIVIDAD",
+			"description": "",
+			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
+			"responses": [],
+			"rawModeData": "{\n    \"nombre\": \"Manzanas\",\n    \"description\": \"jodas\",\n    \"precio\": \"80\",\n    \"imagen\": null\n}",
+			"collection_id": "7feee879-36b8-5a31-d742-b58baa3e668e"
+		},
+		{
+			"id": "6dd00550-eca2-2343-8c15-485dcc9dee9d",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/ApiDemo/producto.php/productos/2",
+			"folder": "4f97c0b3-438b-ca7c-add5-f45114d17010",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1600372179716,
+			"name": "Eliminar json de ACTUALIDAD",
+			"description": "",
+			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
+			"responses": [],
+			"collection_id": "7feee879-36b8-5a31-d742-b58baa3e668e"
+		},
+		{
+			"id": "78020438-8044-9fad-3b3e-9dce7f2fe020",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost/ApiDemo/index.php/probando",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1600371094475,
+			"name": "Devolver un texto",
+			"description": "",
+			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
+			"responses": [],
+			"collection_id": "7feee879-36b8-5a31-d742-b58baa3e668e"
+		},
+		{
+			"id": "7ea18668-1056-f754-d9b6-4b98deabda64",
+			"headers": "Authorization: 123456\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "123456",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/ApiControlNotas/actividad.php/actividad",
+			"folder": "4f97c0b3-438b-ca7c-add5-f45114d17010",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1600553755908,
+			"name": "GET ACTIVIDAD",
+			"description": "",
+			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
+			"responses": []
+		},
+		{
+			"id": "97378b83-d0b4-1e56-9f16-861dc757ff75",
+			"headers": "Content-Type: application/json\nApiKey: 1234567\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "ApiKey",
+					"value": "1234567",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/ApiControlNotas/actividad.php/actividad",
+			"folder": "4f97c0b3-438b-ca7c-add5-f45114d17010",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1600554041146,
+			"name": "Insertar json de ACTIVIDAD",
+			"description": "",
+			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
+			"responses": [],
+			"rawModeData": "{\n    \"descripcion\": \"examen\",\n    \"puntaje\": \"50\",\n    \"fecha\": \"2020/02/02\",\n    \"idgrupomateria\": \"1\"\n}"
+		},
+		{
+			"id": "9ae374bd-e7e0-b769-aa64-e0b7a1e2270e",
+			"headers": "Content-Type: application/json\nApiKey: 1234567\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "ApiKey",
+					"value": "1234567",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/ApiControlNotas/persona.php/persona",
+			"folder": "80cac363-0efc-dfb3-4a84-8322c8eec376",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1600555091357,
+			"name": "Insertar json de PERSONA",
+			"description": "",
+			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
+			"responses": [],
+			"rawModeData": "{\n    \"ci\": \"478935\",\n    \"nombre\": \"Rosalia\",\n    \"apellidos\": \"Rojas\",\n    \"telefono\": \"64453333\",\n    \"direccion\": \"C/ Sucre\"\n}"
+		},
+		{
+			"id": "b28aec96-39cf-2603-6159-d659d758800f",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/ApiControlNotas/persona.php/persona/6339071",
+			"folder": "80cac363-0efc-dfb3-4a84-8322c8eec376",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1600554919493,
+			"name": "Eliminar json de PERSONA",
+			"description": "",
+			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
+			"responses": []
+		},
+		{
+			"id": "ca2133f6-323e-2556-5448-cdef0e33e328",
+			"headers": "Authorization: 123456\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "123456",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/ApiControlNotas/persona.php/persona",
+			"folder": "80cac363-0efc-dfb3-4a84-8322c8eec376",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1600554326118,
+			"name": "GET PERSONA",
+			"description": "",
+			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
+			"responses": []
+		},
+		{
+			"id": "cf2bb1ea-eeb3-e8ff-413c-8ef59f491722",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost/ApiDemo/index.php/pruebas",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1600371067707,
+			"name": "Probando",
+			"description": "",
+			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
+			"responses": [],
+			"collection_id": "7feee879-36b8-5a31-d742-b58baa3e668e"
+		},
+		{
+			"id": "d1cc8eb4-63fd-52a2-d0a3-5a6cf8551903",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost/ApiControlNotas/actividad.php/actividad/1",
+			"folder": "80cac363-0efc-dfb3-4a84-8322c8eec376",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1600553777427,
+			"name": "GET PERSONA ID",
+			"description": "",
+			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
+			"responses": []
+		},
+		{
+			"id": "d2361753-0305-1685-de62-50000969dd35",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost/ApiControlNotas/actividad.php/actividad/1",
+			"folder": "4f97c0b3-438b-ca7c-add5-f45114d17010",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1600553777427,
+			"name": "GET ACTIVIDAD ID",
+			"description": "",
+			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
+			"responses": []
+		}
+	]
+}

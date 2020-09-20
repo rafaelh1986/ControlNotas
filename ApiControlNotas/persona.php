@@ -10,7 +10,7 @@ require_once 'vendor/autoload.php';
 
 $app = new \Slim\Slim();
 
-$db = new mysqli('localhost', 'root', '', 'notasBD');
+$db = new mysqli('remotemysql.com', 'ichSCkKVhV', 'flkdNFpFa4', 'ichSCkKVhV');
 
 // Configuración de cabeceras
 header('Access-Control-Allow-Origin: *');
@@ -78,12 +78,15 @@ $app->post('/persona', function() use($app, $db){
     $json = $app->request->getBody('json');
         $data = json_decode($json, true);
 
-        if(!isset($data['nombre'])){
+        if(!isset($data['ci'])){
+            $data['ci']=null;
+        }
+		if(!isset($data['nombre'])){
             $data['nombre']=null;
         }
 
-        if(!isset($data['apellido'])){
-            $data['apellido']=null;
+        if(!isset($data['apellidos'])){
+            $data['apellidos']=null;
         }
 
         if(!isset($data['telefono'])){
@@ -97,7 +100,7 @@ $app->post('/persona', function() use($app, $db){
         $query = "INSERT INTO tblPersona VALUES(".
 		    "'{$data['ci']}',".
             "'{$data['nombre']}',".
-            "'{$data['apellido']}',".
+            "'{$data['apellidos']}',".
             "'{$data['telefono']}',".
             "'{$data['direccion']}'".
             ");";
@@ -123,9 +126,10 @@ $app->put('/persona/:id', function($id) use($db, $app){
 
     $sql = "UPDATE tblPersona SET ".
         "nombre = '{$data["nombre"]}', ".
-        "apellido = '{$data["apellido"]}', ".
+        "apellidos = '{$data["apellidos"]}', ".
 		"telefono = '{$data["telefono"]}', ".
-		"direccion = '{$data["direccion"]}', ";
+		"direccion = '{$data["direccion"]}' WHERE ci = {$id}";
+	
 
     $query = $db->query($sql);
 
@@ -149,7 +153,7 @@ $app->put('/persona/:id', function($id) use($db, $app){
 
 // ELIMINAR UN PERSONA
 $app->delete('/persona/:id', function($id) use($db, $app){
-    $sql = 'DELETE FROM persona WHERE ci = '.$id;
+    $sql = 'DELETE FROM tblPersona WHERE ci = '.$id;
     $query = $db->query($sql);
 
     if($query){
