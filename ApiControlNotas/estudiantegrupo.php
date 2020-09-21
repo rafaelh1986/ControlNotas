@@ -24,30 +24,30 @@ if($method == "OPTIONS") {
     die();
 }
 
-// LISTAR TODOS LAS PERSONAS
-$app->get('/persona', function() use($db, $app){
-    $sql = 'SELECT * FROM tblPersona ORDER BY ci DESC;';
+// LISTAR TODOS LOS ESTUDIANTES GRUPOS
+$app->get('/estudiantegrupo', function() use($db, $app){
+    $sql = 'SELECT * FROM tblEstudianteGrupo ORDER BY gestion DESC;';
     $query = $db->query($sql);
 
-    $personas = array();
-    while ($persona = $query->fetch_assoc()) {
-        $personas[] = $persona;
+    $egrupos = array();
+    while ($egrupo = $query->fetch_assoc()) {
+        $egrupos[] = $egrupo;
     }
 
     $result = array(
         'status' => 'success',
         'code'	 => 200,
-        'data' => $personas
+        'data' => $egrupos
     );
 
     echo json_encode($result);
 });
 
-// DEVOLVER UNA SOLA PERSONA
-$app->get('/persona/:id', function($id) use($db, $app){
-    $sql = 'SELECT * FROM tblPersona WHERE ci = '.$id;
+// DEVOLVER UNA SOLO ESTUDIANTE GRUPO
+$app->get('/estudiantegrupo/:ci/:id/:gestion', function($ci,$id,$gestion) use($db, $app){
+    $sql = 'SELECT * FROM tblEstudianteGrupo WHERE ciEstudiante = '.$ci.' AND idGrupo= '.$id.' AND gestion = '.$gestion;
     $query = $db->query($sql);
-
+	 
     $result = array(
         'status' 	=> 'error',
         'code'		=> 404,
@@ -55,58 +55,50 @@ $app->get('/persona/:id', function($id) use($db, $app){
     );
 
     if($query->num_rows == 1){
-        $persona = $query->fetch_assoc();
+        $egrupo = $query->fetch_assoc();
 
         $result = array(
             'status' 	=> 'success',
             'code'		=> 200,
-            'data' 	=> $persona
+            'data' 	=> $egrupo
         );
     }
 
     echo json_encode($result);
 });
 
-// GUARDAR PERSONA
-$app->post('/persona', function() use($app, $db){
+// GUARDAR GRUPO
+$app->post('/estudiantegrupo', function() use($app, $db){
     $result = array(
         'status' => 'error',
         'code'	 => 404,
-        'message' => 'La Persona NO se ha creado'
+        'message' => 'EL Estudiante Grupo NO se ha creado'
     );
 
     $json = $app->request->getBody('json');
         $data = json_decode($json, true);
 
-        if(!isset($data['ci'])){
-            $data['ci']=null;
-        }
-		if(!isset($data['nombre'])){
-            $data['nombre']=null;
+        if(!isset($data['gestion'])){
+            $data['gestion']=null;
         }
 
-        if(!isset($data['apellidos'])){
-            $data['apellidos']=null;
+        if(!isset($data['idestudiante'])){
+            $data['idestudiante']=null;
         }
 
-        if(!isset($data['telefono'])){
-            $data['telefono']=null;
+        if(!isset($data['idgrupo'])){
+            $data['idgrupo']=null;
         }
-
-        if(!isset($data['direccion'])){
-            $data['direccion']=null;
-        }
+		
 		if(!isset($data['estado'])){
             $data['estado']=null;
         }
 
-        $query = "INSERT INTO tblPersona VALUES(".
-		    "'{$data['ci']}',".
-            "'{$data['nombre']}',".
-            "'{$data['apellidos']}',".
-            "'{$data['telefono']}',".
-            "'{$data['direccion']}'".
-			"'{$data['estado']}'".
+        $query = "INSERT INTO tblEstudianteGrupo VALUES(".
+            "'{$data['gestion']}',".
+            "'{$data['idestudiante']}',".
+            "'{$data['idgrupo']}',".
+            "'{$data['estado']}'".
             ");";
 
         $insert = $db->query($query);
@@ -115,7 +107,7 @@ $app->post('/persona', function() use($app, $db){
             $result = array(
                 'status' => 'success',
                 'code'	 => 200,
-                'message' => 'Persona creado correctamente'
+                'message' => 'Estudiante Grupo creado correctamente'
             );
         }
 
@@ -123,17 +115,16 @@ $app->post('/persona', function() use($app, $db){
 
 });
 
-// ACTUALIZAR UNA PERSONA
-$app->put('/persona/:id', function($id) use($db, $app){
+// ACTUALIZAR UN GRUPO
+$app->put('/estudiantegrupo/:ci/:id/:gestion', function($ci,$id,$gestion) use($db, $app){
     $json = $app->request->getBody('json');
     $data = json_decode($json, true);
 
-    $sql = "UPDATE tblPersona SET ".
-        "nombre = '{$data["nombre"]}', ".
-        "apellidos = '{$data["apellidos"]}', ".
-		"telefono = '{$data["telefono"]}', ".
-		"direccion = '{$data["direccion"]}', ".
-		"direccion = '{$data["estado"]}' WHERE ci = {$id}";
+    $sql = "UPDATE tblEstudianteGrupo SET ".
+        "gestion = '{$data["gestion"]}', ".
+        "idestudiante = '{$data["idestudiante"]}', ".
+		"idgrupo = '{$data["idgrupo"]}', ".
+		"estado = '{$data["estado"]}' WHERE ciEstudiante = {$ci} AND idGrupo = {$id} AND gestion = {$gestion}";
 	
 
     $query = $db->query($sql);
@@ -142,13 +133,13 @@ $app->put('/persona/:id', function($id) use($db, $app){
         $result = array(
             'status' 	=> 'success',
             'code'		=> 200,
-            'message' 	=> 'La Persona se ha actualizado correctamente!!'
+            'message' 	=> 'Estudiante Grupo se ha actualizado correctamente!!'
         );
     }else{
         $result = array(
             'status' 	=> 'error',
             'code'		=> 404,
-            'message' 	=> 'La Persona NO se ha actualizado!!'
+            'message' 	=> 'Estudiante Grupo NO se ha actualizado!!'
         );
     }
 
@@ -156,22 +147,22 @@ $app->put('/persona/:id', function($id) use($db, $app){
 
 });
 
-// ELIMINAR UN PERSONA
-$app->delete('/persona/:id', function($id) use($db, $app){
-    $sql = 'DELETE FROM tblPersona WHERE ci = '.$id;
+// ELIMINAR UN ACTIDAD
+$app->delete('/estudiantegrupo/:ci/:id/:gestion', function($ci,$id,$gestion) use($db, $app){
+    $sql = 'DELETE FROM tblEstudianteGrupo WHERE ciEstudiante='.$ci.' AND idGrupo='.$id.' AND gestion='.$gestion;
     $query = $db->query($sql);
-
+	
     if($query){
         $result = array(
             'status' 	=> 'success',
             'code'		=> 200,
-            'message' 	=> 'La Persona se ha eliminado correctamente!!'
+            'message' 	=> 'Estudiante Grupo se ha eliminado correctamente!!'
         );
     }else{
         $result = array(
             'status' 	=> 'error',
             'code'		=> 404,
-            'message' 	=> 'La Persona no se ha eliminado!!'
+            'message' 	=> 'Estudiante Grupo NO se ha eliminado!!'
         );
     }
 

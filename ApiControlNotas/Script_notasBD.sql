@@ -72,8 +72,8 @@ CREATE TABLE IF NOT EXISTS `tblProfesor` (
 CREATE TABLE IF NOT EXISTS `tblGrupo` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nivel` varchar(20) NOT NULL,
-  `descripccion` varchar(10) NOT NULL,
-  `ciProfesor` varchar(15) DEFAULT NULL,
+  `descripcion` varchar(10) NOT NULL,
+  `paralelo` varchar(5) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -84,7 +84,6 @@ CREATE TABLE IF NOT EXISTS `tblGrupo` (
 CREATE TABLE IF NOT EXISTS `tblMateria` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `descripcion` varchar(20) NOT NULL,
-  `paralelo` varchar(10) NOT NULL,
   `estado` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

@@ -37,7 +37,7 @@ $app->get('/actividad', function() use($db, $app){
     $result = array(
         'status' => 'success',
         'code'	 => 200,
-        'data' => $actividad
+        'data' => $actividades
     );
 
     echo json_encode($result);
@@ -107,7 +107,7 @@ $app->post('/actividad', function() use($app, $db){
             ");";
 
         $insert = $db->query($query);
-
+		
         if($insert){
             $result = array(
                 'status' => 'success',
@@ -127,13 +127,13 @@ $app->put('/actividad/:id', function($id) use($db, $app){
 
     $sql = "UPDATE tblActividad SET ".
         "descripcion = '{$data["descripcion"]}', ".
-        "puntaje = '{$data["puntaje"]}', ";
-		"fecha = '{$data["fecha"]}', ";
-		"idgrupomateria = '{$data["idgrupomateria"]}', ";
+        "puntaje = '{$data["puntaje"]}', ".
+		"fecha = '{$data["fecha"]}', ".
+		"idgrupomateria = '{$data["idgrupomateria"]}', ".
 		"estado = '{$data["estado"]}' WHERE id = {$id} ";
 
     $query = $db->query($sql);
-
+	
     if($query){
         $result = array(
             'status' 	=> 'success',
@@ -154,7 +154,7 @@ $app->put('/actividad/:id', function($id) use($db, $app){
 
 // ELIMINAR UN ACTIDAD
 $app->delete('/actividad/:id', function($id) use($db, $app){
-    $sql = 'DELETE FROM actividad WHERE id = '.$id;
+    $sql = 'DELETE FROM tblActividad WHERE id = '.$id;
     $query = $db->query($sql);
 
     if($query){

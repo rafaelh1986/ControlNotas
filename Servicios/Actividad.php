@@ -36,6 +36,8 @@
  * @apiName GetActividadID
  * @apiGroup Actividad
  *
+ * @apiParam {Number} id Identificación de la Actividad.
+ *
  * @apiSuccess {String} status Estado de respuesta 
  * @apiSuccess {Number} code  Codigo de servidor http
  * @apiSuccess {String} data Datos sacados de la tabla actividad
@@ -63,7 +65,7 @@
  */
  
  /**
- * @api {post} /actividad/ POST ACTIVIDADES
+ * @api {post} /actividad/ POST ACTIVIDAD
  * @apiName PostActividad
  * @apiGroup Actividad
  *
@@ -78,7 +80,7 @@
  *
  * @apiSuccess {String} status Estado de respuesta 
  * @apiSuccess {Number} code  Codigo de servidor http
- * @apiSuccess {Object} data Mensaje de exito
+  * @apiSuccess {String} message Mensaje de exito
  *
  * @apiSuccessExample {json} Success-Response:
  *     HTTP/1.1 200 OK
@@ -90,9 +92,11 @@
  */
  
  /**
- * @api {put} /actividad/:id PUT ACTIVIDADES
- * @apiName PuttActividad
+ * @api {put} /actividad/:id PUT ACTIVIDAD
+ * @apiName PutActividad
  * @apiGroup Actividad
+ *
+ * @apiParam {Number} id Identificación de la Actividad.
  *
  * @apiParam jsonConsumo {
 							"descripcion": "2do Examen", 
@@ -104,7 +108,7 @@
  *
  * @apiSuccess {String} status Estado de respuesta 
  * @apiSuccess {Number} code  Codigo de servidor http
- * @apiSuccess {Object} data Mensaje de exito
+ * @apiSuccess {String} message Mensaje de exito
  *
  * @apiSuccessExample {json} Success-Response:
  *     HTTP/1.1 200 OK
@@ -116,13 +120,15 @@
  */
  
  /**
- * @api {delete} /actividad/:id DELETE ACTIVIDADES
+ * @api {delete} /actividad/:id DELETE ACTIVIDAD
  * @apiName DeleteActividad
  * @apiGroup Actividad
  *
+ * @apiParam {Number} id Identificación de la Actividad.
+ *
  * @apiSuccess {String} status Estado de respuesta 
  * @apiSuccess {Number} code  Codigo de servidor http
- * @apiSuccess {Object} data Mensaje de exito
+ * @apiSuccess {String} message Mensaje de exito
  *
  * @apiSuccessExample {json} Success-Response:
  *     HTTP/1.1 200 OK

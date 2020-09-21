@@ -23,6 +23,36 @@
 			"id": "4f97c0b3-438b-ca7c-add5-f45114d17010"
 		},
 		{
+			"name": "Estudiante Grupo",
+			"description": "",
+			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
+			"order": [
+				"ca1cee86-a663-7f59-f68e-74d9f4ce97d5",
+				"1ca35992-fe80-6262-171d-f2ebb35f7e16",
+				"55523dc8-26b6-8992-14f5-e114d9f362e9",
+				"15d40fed-7c64-29e2-1001-e97f3f998d73",
+				"9ca6674c-85ae-0350-aa05-b51234e74544"
+			],
+			"owner": "12743820",
+			"folders_order": [],
+			"id": "7a1e926c-74f6-73f5-721f-a95f5bda2d46"
+		},
+		{
+			"name": "Grupo",
+			"description": "",
+			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
+			"order": [
+				"119d92ff-5be0-2446-6791-29cbae23308a",
+				"da3e4729-10d2-1726-f110-a44ee3fdcd72",
+				"94e98755-1eb2-97b3-5303-ab832e048009",
+				"51ff5118-da5d-0a0a-9f1e-a02222ee8ae3",
+				"9a5f5f5b-1941-c415-9374-38609d3a2ab6"
+			],
+			"owner": "12743820",
+			"folders_order": [],
+			"id": "5535d46c-5e32-7b52-467c-71231f4b6861"
+		},
+		{
 			"name": "Persona",
 			"description": "",
 			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
@@ -40,12 +70,98 @@
 	],
 	"folders_order": [
 		"4f97c0b3-438b-ca7c-add5-f45114d17010",
+		"5535d46c-5e32-7b52-467c-71231f4b6861",
+		"7a1e926c-74f6-73f5-721f-a95f5bda2d46",
 		"80cac363-0efc-dfb3-4a84-8322c8eec376"
 	],
 	"timestamp": 1555508558795,
 	"owner": "12743820",
 	"public": false,
 	"requests": [
+		{
+			"id": "119d92ff-5be0-2446-6791-29cbae23308a",
+			"headers": "Authorization: 123456\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "123456",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/ApiControlNotas/grupo.php/grupo",
+			"folder": "5535d46c-5e32-7b52-467c-71231f4b6861",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1600570198921,
+			"name": "GET GRUPO",
+			"description": "",
+			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
+			"responses": []
+		},
+		{
+			"id": "15d40fed-7c64-29e2-1001-e97f3f998d73",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/ApiControlNotas/estudiantegrupo.php/estudiantegrupo/3444231/2/2020",
+			"folder": "7a1e926c-74f6-73f5-721f-a95f5bda2d46",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1600636040020,
+			"name": "Actualizar ESTUDIANTEGRUPO",
+			"description": "",
+			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
+			"responses": [],
+			"rawModeData": "{\n    \"estado\": \"0\"\n}"
+		},
+		{
+			"id": "1ca35992-fe80-6262-171d-f2ebb35f7e16",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost/ApiControlNotas/estudiantegrupo.php/estudiantegrupo/123454444/2/2020",
+			"folder": "7a1e926c-74f6-73f5-721f-a95f5bda2d46",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1600635205632,
+			"name": "GET ESTUDIANTEGRUPO ID",
+			"description": "",
+			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
+			"responses": []
+		},
 		{
 			"id": "24d6b74b-cd81-91c8-31fb-71bc0eb33a6e",
 			"headers": "Content-Type: application/json\n",
@@ -70,12 +186,12 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1600558244893,
+			"time": 1600637396940,
 			"name": "Actualizar json de PERSONA",
 			"description": "",
 			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
 			"responses": [],
-			"rawModeData": "{\n   \"nombre\":\"Rosalia\",\n   \"apellidos\":\"Bejarano\",\n   \"telefono\":\"64453333\",\n   \"direccion\":\"C\\/ Sucre\"\n}"
+			"rawModeData": "{\n   \"nombre\":\"Rosalia\",\n   \"apellidos\":\"Bejarano\",\n   \"telefono\":\"64453333\",\n   \"direccion\":\"C\\/ Sucre\"\n   \"estado\": \"1\"\n}"
 		},
 		{
 			"id": "50b33225-e9bf-bd95-2f0f-84808ce584db",
@@ -88,7 +204,7 @@
 					"enabled": true
 				}
 			],
-			"url": "http://localhost/ApiDemo/producto.php/productos/1",
+			"url": "http://localhost/ApiControlNotas/actividad.php/actividad/1",
 			"folder": "4f97c0b3-438b-ca7c-add5-f45114d17010",
 			"queryParams": [],
 			"preRequestScript": null,
@@ -101,13 +217,80 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1600372150222,
-			"name": "Actualizar json de ACTIVIDAD",
+			"time": 1600645939265,
+			"name": "Actualizar ACTIVIDAD",
 			"description": "",
 			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
 			"responses": [],
-			"rawModeData": "{\n    \"nombre\": \"Manzanas\",\n    \"description\": \"jodas\",\n    \"precio\": \"80\",\n    \"imagen\": null\n}",
-			"collection_id": "7feee879-36b8-5a31-d742-b58baa3e668e"
+			"rawModeData": "{\n    \"descripcion\": \"Previa examen\",\n    \"puntaje\": \"80\",\n    \"fecha\": \"2020/02/12\",\n    \"idgrupomateria\": \"2\",\n    \"estado\":\"1\"\n}"
+		},
+		{
+			"id": "51ff5118-da5d-0a0a-9f1e-a02222ee8ae3",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/ApiControlNotas/grupo.php/grupo/1",
+			"folder": "5535d46c-5e32-7b52-467c-71231f4b6861",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1600571152897,
+			"name": "Actualizar json de GRUPO",
+			"description": "",
+			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
+			"responses": [],
+			"rawModeData": "{\n    \"nivel\": \"Secundaria\",\n    \"descripcion\": \"5to\",\n    \"paralelo\": \"A\",\n    \"estado\": \"1\"\n}"
+		},
+		{
+			"id": "55523dc8-26b6-8992-14f5-e114d9f362e9",
+			"headers": "Content-Type: application/json\nApiKey: 1234567\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "ApiKey",
+					"value": "1234567",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/ApiControlNotas/estudiantegrupo.php/estudiantegrupo",
+			"folder": "7a1e926c-74f6-73f5-721f-a95f5bda2d46",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1600639488763,
+			"name": "Insertar ESTUDIANTEGRUPO",
+			"description": "",
+			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
+			"responses": [],
+			"rawModeData": "{\n    \"gestion\": \"2020\",\n    \"cidestudiante\": \"345666\",\n    \"idgrupo\": \"2\",\n    \"estado\": \"1\"\n}"
 		},
 		{
 			"id": "6dd00550-eca2-2343-8c15-485dcc9dee9d",
@@ -134,7 +317,7 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"time": 1600372179716,
-			"name": "Eliminar json de ACTUALIDAD",
+			"name": "Eliminar ACTUALIDAD",
 			"description": "",
 			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
 			"responses": [],
@@ -194,6 +377,43 @@
 			"responses": []
 		},
 		{
+			"id": "94e98755-1eb2-97b3-5303-ab832e048009",
+			"headers": "Content-Type: application/json\nApiKey: 1234567\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "ApiKey",
+					"value": "1234567",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/ApiControlNotas/grupo.php/grupo",
+			"folder": "5535d46c-5e32-7b52-467c-71231f4b6861",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1600570588734,
+			"name": "Insertar json de GRUPO",
+			"description": "",
+			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
+			"responses": [],
+			"rawModeData": "{\n    \"nivel\": \"Secundaria\",\n    \"descripcion\": \"5to\",\n    \"paralelo\": \"A\",\n    \"estado\": \"1\"\n}"
+		},
+		{
 			"id": "97378b83-d0b4-1e56-9f16-861dc757ff75",
 			"headers": "Content-Type: application/json\nApiKey: 1234567\n",
 			"headerData": [
@@ -224,11 +444,41 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"time": 1600554041146,
-			"name": "Insertar json de ACTIVIDAD",
+			"name": "Insertar ACTIVIDAD",
 			"description": "",
 			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
 			"responses": [],
 			"rawModeData": "{\n    \"descripcion\": \"examen\",\n    \"puntaje\": \"50\",\n    \"fecha\": \"2020/02/02\",\n    \"idgrupomateria\": \"1\"\n}"
+		},
+		{
+			"id": "9a5f5f5b-1941-c415-9374-38609d3a2ab6",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/ApiControlNotas/grupo.php/grupo/2",
+			"folder": "5535d46c-5e32-7b52-467c-71231f4b6861",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1600570242960,
+			"name": "Eliminar json de GRUPO",
+			"description": "",
+			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
+			"responses": []
 		},
 		{
 			"id": "9ae374bd-e7e0-b769-aa64-e0b7a1e2270e",
@@ -260,12 +510,42 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1600555091357,
+			"time": 1600637379876,
 			"name": "Insertar json de PERSONA",
 			"description": "",
 			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
 			"responses": [],
-			"rawModeData": "{\n    \"ci\": \"478935\",\n    \"nombre\": \"Rosalia\",\n    \"apellidos\": \"Rojas\",\n    \"telefono\": \"64453333\",\n    \"direccion\": \"C/ Sucre\"\n}"
+			"rawModeData": "{\n    \"ci\": \"12344443\",\n    \"nombre\": \"Roberto\",\n    \"apellidos\": \"Torres\",\n    \"telefono\": \"444443232\",\n    \"direccion\": \"Av. Santos Dumont\",\n    \"estado\": \"1\"\n}"
+		},
+		{
+			"id": "9ca6674c-85ae-0350-aa05-b51234e74544",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/ApiControlNotas/estudiantegrupo.php/estudiantegrupo/3444231/2/2020",
+			"folder": "7a1e926c-74f6-73f5-721f-a95f5bda2d46",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1600636610526,
+			"name": "Eliminar ESTUDIANTEGRUPO",
+			"description": "",
+			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
+			"responses": []
 		},
 		{
 			"id": "b28aec96-39cf-2603-6159-d659d758800f",
@@ -293,6 +573,36 @@
 			"helperAttributes": {},
 			"time": 1600554919493,
 			"name": "Eliminar json de PERSONA",
+			"description": "",
+			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
+			"responses": []
+		},
+		{
+			"id": "ca1cee86-a663-7f59-f68e-74d9f4ce97d5",
+			"headers": "Authorization: 123456\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "123456",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost/ApiControlNotas/estudiantegrupo.php/estudiantegrupo",
+			"folder": "7a1e926c-74f6-73f5-721f-a95f5bda2d46",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1600623089753,
+			"name": "GET ESTUDIANTEGRUPO",
 			"description": "",
 			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
 			"responses": []
@@ -392,6 +702,29 @@
 			"helperAttributes": {},
 			"time": 1600553777427,
 			"name": "GET ACTIVIDAD ID",
+			"description": "",
+			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
+			"responses": []
+		},
+		{
+			"id": "da3e4729-10d2-1726-f110-a44ee3fdcd72",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost/ApiControlNotas/grupo.php/grupo/1",
+			"folder": "5535d46c-5e32-7b52-467c-71231f4b6861",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1600570211333,
+			"name": "GET GRUPO ID",
 			"description": "",
 			"collectionId": "7feee879-36b8-5a31-d742-b58baa3e668e",
 			"responses": []
