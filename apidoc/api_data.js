@@ -362,6 +362,234 @@ define({ "api": [
   },
   {
     "type": "delete",
+    "url": "/estudiante/:id",
+    "title": "DELETE ESTUDIANTE",
+    "name": "DeleteEstudiante",
+    "group": "Estudiante",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Identificación de la Estudiante.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>Estado de respuesta</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "description": "<p>Codigo de servidor http</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Mensaje de exito</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " HTTP/1.1 200 OK\n{\n   \"status\": \"success\",\n   \"code\": 200,\n   \"message\": \"Estudiante eliminado correctamente\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "servicios/Estudiante.php",
+    "groupTitle": "Estudiante"
+  },
+  {
+    "type": "get",
+    "url": "/estudiante",
+    "title": "GET ESTUDIANTES",
+    "name": "GetEstudiante",
+    "group": "Estudiante",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>Estado de respuesta</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "description": "<p>Codigo de servidor http</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Datos sacados de la tabla estudiante</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "data.rude",
+            "description": "<p>Identificador de estudiante</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "data.observacion",
+            "description": "<p>Observacion del estudiante</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Date",
+            "optional": false,
+            "field": "data.fechanac",
+            "description": "<p>Fecha de Nacimiento del estudiante</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "data.cipersona",
+            "description": "<p>Cedula de Identidad del estudiante</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "data.estado",
+            "description": "<p>Estado del estudiante</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " HTTP/1.1 200 OK\n{\n   \"status\": \"success\",\n   \"code\": 200,\n   \"data\": [\n               {\n                   \"rude\": \"1354\",\n                   \"observacion\": \" \",\n                   \"fechanac\": \"1998-10-04\",\n                   \"cipersona\": \"3211234\",\n                   \"estado\": \"1\"\n                }\n           ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "servicios/Estudiante.php",
+    "groupTitle": "Estudiante"
+  },
+  {
+    "type": "get",
+    "url": "/estudiante/:ci",
+    "title": "GET ESTUDIANTE CI",
+    "name": "Get_ESTUDIANTE_CI",
+    "group": "Estudiante",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Identificación de la Estudiante.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>Estado de respuesta</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "description": "<p>Codigo de servidor http</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Datos sacados de la tabla estudiante</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "data.rude",
+            "description": "<p>Identificador de estudiante</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "data.observacion",
+            "description": "<p>Observacion del estudiante</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Date",
+            "optional": false,
+            "field": "data.fechanac",
+            "description": "<p>Fecha de Nacimiento del estudiante</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "data.cipersona",
+            "description": "<p>Cedula de Identidad del estudiante</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "data.estado",
+            "description": "<p>Estado del estudiante</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " HTTP/1.1 200 OK\n{\n   \"status\": \"success\",\n   \"code\": 200,\n   \"data\": {\n             \t\t \"rude\": \"1354\",\n                   \"observacion\": \" \",\n                   \"fechanac\": \"1998-10-04\",\n                   \"cipersona\": \"3211234\",\n                   \"estado\": \"1\"\n           }    \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "servicios/Estudiante.php",
+    "groupTitle": "Estudiante"
+  },
+  {
+    "type": "delete",
     "url": "/estudiantegrupo/:ci/:id/:gestion",
     "title": "DELETE ESTUDIANTE GRUPO",
     "name": "DeleteEstudianteGrupo",
@@ -734,6 +962,125 @@ define({ "api": [
     "version": "0.0.0",
     "filename": "servicios/EstudianteGrupo.php",
     "groupTitle": "EstudianteGrupo"
+  },
+  {
+    "type": "post",
+    "url": "/estudiante/",
+    "title": "POST ESTUDIANTE",
+    "name": "PostEstudiante",
+    "group": "Estudiante",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "jsonConsumo",
+            "description": "<p>{ &quot;rude&quot;: &quot;1354&quot;, &quot;observacion&quot;: &quot; &quot;, &quot;fechanac&quot;: &quot;1998-10-04&quot;, &quot;cipersona&quot;: &quot;3211234&quot;, &quot;estado&quot;: &quot;1&quot; }</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>Estado de respuesta</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "description": "<p>Codigo de servidor http</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Mensaje de exito</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " HTTP/1.1 200 OK\n{\n   \"status\": \"success\",\n   \"code\": 200,\n   \"message\": \"Estudiante creado correctamente\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "servicios/Estudiante.php",
+    "groupTitle": "Estudiante"
+  },
+  {
+    "type": "put",
+    "url": "/estudiante/:id",
+    "title": "PUT ESTUDIANTE",
+    "name": "PutEstudiante",
+    "group": "Estudiante",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Identificación de la Estudiante.</p>"
+          },
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "jsonConsumo",
+            "description": "<p>{ &quot;rude&quot;: &quot;1354&quot;, &quot;observacion&quot;: &quot; &quot;, &quot;fechanac&quot;: &quot;1998-10-04&quot;, &quot;estado&quot;: &quot;1&quot; }</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>Estado de respuesta</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "description": "<p>Codigo de servidor http</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Mensaje de exito</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " HTTP/1.1 200 OK\n{\n   \"status\": \"success\",\n   \"code\": 200,\n   \"message\": \"Estudiante modificado correctamente\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "servicios/Estudiante.php",
+    "groupTitle": "Estudiante"
   },
   {
     "type": "delete",
