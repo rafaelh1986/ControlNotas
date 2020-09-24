@@ -1067,5 +1067,338 @@
     "version": "0.0.0",
     "filename": "servicios/Grupo.php",
     "groupTitle": "Grupo"
+  },
+  {
+    "type": "delete",
+    "url": "/tutor/:ci",
+    "title": "DELETE TUTOR",
+    "name": "DeleteTutor",
+    "group": "Tutor",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "ci",
+            "description": "<p>Identificación de la Tutor.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>Estado de respuesta</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "description": "<p>Codigo de servidor http</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Mensaje de exito</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " HTTP/1.1 200 OK\n{\n   \"status\": \"success\",\n   \"code\": 200,\n   \"message\": \"Tutor eliminado correctamente\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "servicios/Tutor.php",
+    "groupTitle": "Tutor"
+  },
+  {
+    "type": "get",
+    "url": "/tutor",
+    "title": "GET TUTOR",
+    "name": "GetTutor",
+    "group": "Tutor",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>Estado de respuesta</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "description": "<p>Codigo de servidor http</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Datos sacados de la tabla tutor</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "data.correo",
+            "description": "<p>correo electronico del tutor</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "data.ciPersona",
+            "description": "<p>Cedula de Identidad del tutor</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Float",
+            "optional": false,
+            "field": "data.ciEstudiante",
+            "description": "<p>Cedula de Identidad del Estudiante</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "data.estado",
+            "description": "<p>Estado del Tutor</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " HTTP/1.1 200 OK\n{\n   \"status\": \"success\",\n   \"code\": 200,\n   \"data\": [\n               {\n                      \"correo\": \"lorena.sanchez@gmail.com\",\n       \t\t\t\t    \"ciPersona\": \"6545454\",\n         \t\t\t\t\"ciEstudiante\": \"1232345\",\n         \t\t\t\t\"estado\": \"1\"\n                }\n           ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "servicios/Tutor.php",
+    "groupTitle": "Tutor"
+  },
+  {
+    "type": "get",
+    "url": "/tutor/:ci",
+    "title": "GET TUTOR CI",
+    "name": "GetTutorCI",
+    "group": "Tutor",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "ci",
+            "description": "<p>Cedula de Identidad del Tutor.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>Estado de respuesta</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "description": "<p>Codigo de servidor http</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Datos sacados de la tabla tutor</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "data.correo",
+            "description": "<p>correo electronico del tutor</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "data.ciPersona",
+            "description": "<p>Cedula de Identidad del tutor</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Float",
+            "optional": false,
+            "field": "data.ciEstudiante",
+            "description": "<p>Cedula de Identidad del Estudiante</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "data.estado",
+            "description": "<p>Estado del Tutor</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " HTTP/1.1 200 OK\n{\n   \"status\": \"success\",\n   \"code\": 200,\n   \"data\": {\n             \t\"correo\": \"lorena.sanchez@gmail.com\",\n       \t\t\t\"ciPersona\": \"6545454\",\n         \t\t\"ciEstudiante\": \"1232345\",\n         \t\t\"estado\": \"1\"\n           }    \n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "servicios/Tutor.php",
+    "groupTitle": "Tutor"
+  },
+  {
+    "type": "post",
+    "url": "/tutor/",
+    "title": "POST TUTOR",
+    "name": "PostTutor",
+    "group": "Tutor",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "jsonConsumo",
+            "description": "<p>{ &quot;correo&quot;: &quot;lorena.sanchez@gmail.com&quot;, &quot;ciPersona&quot;: &quot;6545454&quot;, &quot;ciEstudiante&quot;: &quot;1232345&quot;, &quot;estado&quot;: &quot;1&quot; }</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>Estado de respuesta</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "description": "<p>Codigo de servidor http</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Mensaje de exito</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " HTTP/1.1 200 OK\n{\n   \"status\": \"success\",\n   \"code\": 200,\n   \"message\": \"Tutor creado correctamente\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "servicios/Tutor.php",
+    "groupTitle": "Tutor"
+  },
+  {
+    "type": "put",
+    "url": "/tutor/:ci",
+    "title": "PUT TUTOR",
+    "name": "PutTutor",
+    "group": "Tutor",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "ci",
+            "description": "<p>Identificación del Tutor.</p>"
+          },
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "jsonConsumo",
+            "description": "<p>{ &quot;correo&quot;: &quot;lorena.sanchez@gmail.com&quot;, &quot;ciEstudiante&quot;: &quot;1232345&quot;, &quot;estado&quot;: &quot;1&quot; }</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>Estado de respuesta</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "description": "<p>Codigo de servidor http</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "description": "<p>Mensaje de exito</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " HTTP/1.1 200 OK\n{\n   \"status\": \"success\",\n   \"code\": 200,\n   \"message\": \"Tutor modificado correctamente\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "servicios/Tutor.php",
+    "groupTitle": "Tutor"
   }
 ]

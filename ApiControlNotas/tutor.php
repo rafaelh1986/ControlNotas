@@ -24,98 +24,90 @@ if($method == "OPTIONS") {
     die();
 }
 
-// LISTAR TODOS LAS PERSONAS
-$app->get('/persona', function() use($db, $app){
-    $sql = 'SELECT * FROM tblPersona ORDER BY ci DESC;';
+// LISTAR TODOS LOS TUTORES
+$app->get('/tutor', function() use($db, $app){
+    $sql = 'SELECT * FROM tblTutor ORDER BY ciPersona DESC;';
     $query = $db->query($sql);
 
-    $personas = array();
-    while ($persona = $query->fetch_assoc()) {
-        $personas[] = $persona;
+    $tutores = array();
+    while ($tutor = $query->fetch_assoc()) {
+        $tutores[] = $tutor;
     }
 
     $result = array(
         'status' => 'success',
         'code'	 => 200,
-        'data' => $personas
+        'data' => $tutores
     );
 
     echo json_encode($result);
 });
 
-// DEVOLVER UNA SOLA PERSONA
-$app->get('/persona/:id', function($id) use($db, $app){
-    $sql = 'SELECT * FROM tblPersona WHERE ci = '.$id;
+// DEVOLVER UN SOLO TUTOR
+$app->get('/tutor/:ci', function($ci) use($db, $app){
+    $sql = 'SELECT * FROM tblTutor WHERE ciPersona = '.$ci;
     $query = $db->query($sql);
 
     $result = array(
         'status' 	=> 'error',
         'code'		=> 404,
-        'message' 	=> 'Persona no disponible'
+        'message' 	=> 'Tutor no disponible'
     );
 
     if($query->num_rows == 1){
-        $persona = $query->fetch_assoc();
+        $tutor = $query->fetch_assoc();
 
         $result = array(
             'status' 	=> 'success',
             'code'		=> 200,
-            'data' 	=> $persona
+            'data' 	=> $tutor
         );
     }
 
     echo json_encode($result);
 });
 
-// GUARDAR PERSONA
-$app->post('/persona', function() use($app, $db){
+// GUARDAR TUTOR
+$app->post('/tutor', function() use($app, $db){
     $result = array(
         'status' => 'error',
         'code'	 => 404,
-        'message' => 'La Persona NO se ha creado'
+        'message' => 'El Tutor NO se ha creado'
     );
 
     $json = $app->request->getBody('json');
         $data = json_decode($json, true);
 
-        if(!isset($data['ci'])){
-            $data['ci']=null;
-        }
-		if(!isset($data['nombre'])){
-            $data['nombre']=null;
+        if(!isset($data['correo'])){
+            $data['correo']=null;
         }
 
-        if(!isset($data['apellidos'])){
-            $data['apellidos']=null;
+        if(!isset($data['cipersona'])){
+            $data['cipersona']=null;
         }
 
-        if(!isset($data['telefono'])){
-            $data['telefono']=null;
+        if(!isset($data['ciestudiante'])){
+            $data['ciestudiante']=null;
         }
 
-        if(!isset($data['direccion'])){
-            $data['direccion']=null;
-        }
-		if(!isset($data['estado'])){
+        if(!isset($data['estado'])){
             $data['estado']=null;
         }
 
-        $query = "INSERT INTO tblPersona VALUES(".
-		    "'{$data['ci']}',".
-            "'{$data['nombre']}',".
-            "'{$data['apellidos']}',".
-            "'{$data['telefono']}',".
-            "'{$data['direccion']}',".
-			"'{$data['estado']}'".
+        $query = "INSERT INTO tblTutor VALUES(".
+            "'{$data['correo']}',".
+            "'{$data['cipersona']}',".
+            "'{$data['ciestudiante']}',".
+		    "'{$data['estado']}'".
             ");";
 
         $insert = $db->query($query);
-
+		
         if($insert){
             $result = array(
                 'status' => 'success',
                 'code'	 => 200,
-                'message' => 'Persona creado correctamente'
+                'message' => 'Tutor creado correctamente'
             );
         }
 
@@ -123,32 +115,29 @@ $app->post('/persona', function() use($app, $db){
 
 });
 
-// ACTUALIZAR UNA PERSONA
-$app->put('/persona/:id', function($id) use($db, $app){
+// ACTUALIZAR UN TUTOR
+$app->put('/tutor/:ci', function($ci) use($db, $app){
     $json = $app->request->getBody('json');
     $data = json_decode($json, true);
 
-    $sql = "UPDATE tblPersona SET ".
-        "nombre = '{$data["nombre"]}', ".
-        "apellidos = '{$data["apellidos"]}', ".
-		"telefono = '{$data["telefono"]}', ".
-		"direccion = '{$data["direccion"]}', ".
-		"direccion = '{$data["estado"]}' WHERE ci = {$id}";
-	
+    $sql = "UPDATE tblTutor SET ".
+        "correo = '{$data["correo"]}', ".
+		"ciestudiante = '{$data["ciestudiante"]}', ".
+		"estado = '{$data["estado"]}' WHERE ciPersona = {$ci} ";
 
     $query = $db->query($sql);
-
+	
     if($query){
         $result = array(
             'status' 	=> 'success',
             'code'		=> 200,
-            'message' 	=> 'La Persona se ha actualizado correctamente!!'
+            'message' 	=> 'El Tutor se ha actualizado correctamente!!'
         );
     }else{
         $result = array(
             'status' 	=> 'error',
             'code'		=> 404,
-            'message' 	=> 'La Persona NO se ha actualizado!!'
+            'message' 	=> 'El Tutor NO se ha actualizado!!'
         );
     }
 
@@ -156,22 +145,22 @@ $app->put('/persona/:id', function($id) use($db, $app){
 
 });
 
-// ELIMINAR UN PERSONA
-$app->delete('/persona/:id', function($id) use($db, $app){
-    $sql = 'DELETE FROM tblPersona WHERE ci = '.$id;
+// ELIMINAR UN TUTOR
+$app->delete('/tutor/:ci', function($ci) use($db, $app){
+    $sql = 'DELETE FROM tblTutor WHERE ciPersona = '.$ci;
     $query = $db->query($sql);
 
     if($query){
         $result = array(
             'status' 	=> 'success',
             'code'		=> 200,
-            'message' 	=> 'La Persona se ha eliminado correctamente!!'
+            'message' 	=> 'El Tutor se ha eliminado correctamente!!'
         );
     }else{
         $result = array(
             'status' 	=> 'error',
             'code'		=> 404,
-            'message' 	=> 'La Persona no se ha eliminado!!'
+            'message' 	=> 'El Tutor no se ha eliminado!!'
         );
     }
 
