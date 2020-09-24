@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "195a3623-5c8b-47f0-9f6a-c7e39054e80a",
+		"_postman_id": "dd25e4f2-5496-495c-946d-6977c6e941f8",
 		"name": "AControlNotas",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -55,7 +55,7 @@
 					"response": []
 				},
 				{
-					"name": "Insertar ACTIVIDAD",
+					"name": "INSERTAR ACTIVIDAD",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -88,7 +88,7 @@
 					"response": []
 				},
 				{
-					"name": "Actualizar ACTIVIDAD",
+					"name": "ACTUALIZAR ACTIVIDAD",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -118,7 +118,7 @@
 					"response": []
 				},
 				{
-					"name": "Eliminar ACTUALIDAD",
+					"name": "ELIMINAR ACTUALIDAD",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -132,15 +132,15 @@
 							"formdata": []
 						},
 						"url": {
-							"raw": "http://localhost/ApiDemo/producto.php/productos/2",
+							"raw": "http://localhost/ApiControlNotas/actividad.php/actividad/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
-								"ApiDemo",
-								"producto.php",
-								"productos",
+								"ApiControlNotas",
+								"actividad.php",
+								"actividad",
 								"2"
 							]
 						}
@@ -263,7 +263,7 @@
 					"response": []
 				},
 				{
-					"name": "Eliminar TUTOR",
+					"name": "ELIMINAR TUTOR",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -298,152 +298,6 @@
 		{
 			"name": "Grupo",
 			"item": [
-				{
-					"name": "Grupo",
-					"item": [
-						{
-							"name": "GET GRUPO",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "123456"
-									}
-								],
-								"url": {
-									"raw": "http://localhost/ApiControlNotas/grupo.php/grupo",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"path": [
-										"ApiControlNotas",
-										"grupo.php",
-										"grupo"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "GET GRUPO ID",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost/ApiControlNotas/grupo.php/grupo/1",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"path": [
-										"ApiControlNotas",
-										"grupo.php",
-										"grupo",
-										"1"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Insertar json de GRUPO",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
-									{
-										"key": "ApiKey",
-										"value": "1234567"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"nivel\": \"Secundaria\",\n    \"descripcion\": \"5to\",\n    \"paralelo\": \"A\",\n    \"estado\": \"1\"\n}"
-								},
-								"url": {
-									"raw": "http://localhost/ApiControlNotas/grupo.php/grupo",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"path": [
-										"ApiControlNotas",
-										"grupo.php",
-										"grupo"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Actualizar json de GRUPO",
-							"request": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"nivel\": \"Secundaria\",\n    \"descripcion\": \"5to\",\n    \"paralelo\": \"A\",\n    \"estado\": \"1\"\n}"
-								},
-								"url": {
-									"raw": "http://localhost/ApiControlNotas/grupo.php/grupo/1",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"path": [
-										"ApiControlNotas",
-										"grupo.php",
-										"grupo",
-										"1"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Eliminar json de GRUPO",
-							"request": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "http://localhost/ApiControlNotas/grupo.php/grupo/2",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"path": [
-										"ApiControlNotas",
-										"grupo.php",
-										"grupo",
-										"2"
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
-				},
 				{
 					"name": "GET GRUPO",
 					"request": {
@@ -491,7 +345,7 @@
 					"response": []
 				},
 				{
-					"name": "Insertar json de GRUPO",
+					"name": "INSERTAR GRUPO",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -524,7 +378,7 @@
 					"response": []
 				},
 				{
-					"name": "Actualizar json de GRUPO",
+					"name": "ACTUALIZAR GRUPO",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -554,7 +408,7 @@
 					"response": []
 				},
 				{
-					"name": "Eliminar json de GRUPO",
+					"name": "ELIMINAR GRUPO",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -783,7 +637,7 @@
 					"response": []
 				},
 				{
-					"name": "Insertar ESTUDIANTEGRUPO",
+					"name": "INSERTAR ESTUDIANTEGRUPO",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -816,7 +670,7 @@
 					"response": []
 				},
 				{
-					"name": "Actualizar ESTUDIANTEGRUPO",
+					"name": "ACTUALIZAR ESTUDIANTEGRUPO",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -848,7 +702,7 @@
 					"response": []
 				},
 				{
-					"name": "Eliminar ESTUDIANTEGRUPO",
+					"name": "ELIMINAR ESTUDIANTEGRUPO",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -932,7 +786,7 @@
 					"response": []
 				},
 				{
-					"name": "Insertar json de PERSONA",
+					"name": "ELIMINAR PERSONA",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -965,7 +819,7 @@
 					"response": []
 				},
 				{
-					"name": "Actualizar json de PERSONA",
+					"name": "ACTUALIZAR PERSONA",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -995,7 +849,7 @@
 					"response": []
 				},
 				{
-					"name": "Eliminar json de PERSONA",
+					"name": "ELIMINAR PERSONA",
 					"request": {
 						"method": "DELETE",
 						"header": [
