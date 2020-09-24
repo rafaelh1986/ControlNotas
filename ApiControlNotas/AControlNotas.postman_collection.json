@@ -1,780 +1,781 @@
 {
-	"id": "195a3623-5c8b-47f0-9f6a-c7e39054e80a",
-	"name": "AControlNotas",
-	"description": "",
-	"auth": null,
-	"events": null,
-	"variables": [],
-	"order": [
-		"4d91ca41-b0a6-4c77-9ac8-7e5faf1a683a",
-		"517cb753-e27c-4e3a-9c59-2bf5921bc77a"
-	],
-	"folders_order": [
-		"c3ed7a1b-653a-41a9-b997-21fc36d00589",
-		"8831f34e-b020-4019-b670-d2ba70a769e0",
-		"bcf4c471-f92f-4e7c-b5c4-91798d5ee898",
-		"30e5db1e-1b09-48f9-b7c4-09b9c7379149",
-		"44c9be5f-1053-4b3b-97f6-ae01011f982f"
-	],
-	"protocolProfileBehavior": {},
-	"folders": [
+	"info": {
+		"_postman_id": "4aaee546-e92c-43c6-97af-c44185d37e8d",
+		"name": "AControlNotas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
 		{
-			"id": "c3ed7a1b-653a-41a9-b997-21fc36d00589",
 			"name": "Actividad",
-			"description": "",
-			"auth": null,
-			"events": null,
-			"collection": "195a3623-5c8b-47f0-9f6a-c7e39054e80a",
-			"folder": null,
-			"order": [
-				"ff0f146b-22ac-49e0-a9b7-5f3229baa13e",
-				"97861cc9-03b7-40bc-9c0c-f3571b5210ed",
-				"f58777fe-df8b-4fac-bed3-0d4153200672",
-				"39be1703-4608-4d48-80a8-adc72c05ed06",
-				"a242fda6-0189-4bb6-a3ff-7fc92c9e936b"
+			"item": [
+				{
+					"name": "GET ACTIVIDAD",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "123456"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/ApiControlNotas/actividad.php/actividad",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ApiControlNotas",
+								"actividad.php",
+								"actividad"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ACTIVIDAD ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/ApiControlNotas/actividad.php/actividad/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ApiControlNotas",
+								"actividad.php",
+								"actividad",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "INSERTAR ACTIVIDAD",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "ApiKey",
+								"value": "1234567"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"descripcion\": \"examen\",\n    \"puntaje\": \"50\",\n    \"fecha\": \"2020/02/02\",\n    \"idgrupomateria\": \"1\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost/ApiControlNotas/actividad.php/actividad",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ApiControlNotas",
+								"actividad.php",
+								"actividad"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR ACTIVIDAD",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"descripcion\": \"Previa examen\",\n    \"puntaje\": \"80\",\n    \"fecha\": \"2020/02/12\",\n    \"idgrupomateria\": \"2\",\n    \"estado\":\"1\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost/ApiControlNotas/actividad.php/actividad/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ApiControlNotas",
+								"actividad.php",
+								"actividad",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINAR ACTUALIDAD",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost/ApiControlNotas/actividad.php/actividad/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ApiControlNotas",
+								"actividad.php",
+								"actividad",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
 			],
-			"folders_order": [],
 			"protocolProfileBehavior": {}
 		},
 		{
-			"id": "30e5db1e-1b09-48f9-b7c4-09b9c7379149",
-			"name": "Estudiante Grupo",
-			"description": "",
-			"auth": null,
-			"events": null,
-			"collection": "195a3623-5c8b-47f0-9f6a-c7e39054e80a",
-			"folder": null,
-			"order": [
-				"8396f697-0d1d-4540-a139-be66b773220d",
-				"61593d4e-045f-4258-a956-0a72a92c8194",
-				"a1fcc993-ed8e-4d61-a5b0-ab5102b983f4",
-				"8c9e6d58-b8df-4d24-b4d2-3fc4a7a39b98",
-				"490800b3-51b4-48de-9e02-3dc5bddd8d40"
-			],
-			"folders_order": [],
-			"protocolProfileBehavior": {}
-		},
-		{
-			"id": "bcf4c471-f92f-4e7c-b5c4-91798d5ee898",
-			"name": "Grupo",
-			"description": "",
-			"auth": null,
-			"events": null,
-			"collection": "195a3623-5c8b-47f0-9f6a-c7e39054e80a",
-			"folder": null,
-			"order": [
-				"f3e43a83-aeea-42fc-a9f4-b79f38166fa8",
-				"d390f925-64aa-48ab-a426-af69f6993cf2",
-				"e57ec673-d0cb-4197-93e2-cc5525c5612c",
-				"7064a221-5471-48c1-8005-b3ab7eb14f79",
-				"ebce2bf8-d9ef-48be-843e-ddc2bf93e825"
-			],
-			"folders_order": [],
-			"protocolProfileBehavior": {}
-		},
-		{
-			"id": "44c9be5f-1053-4b3b-97f6-ae01011f982f",
-			"name": "Persona",
-			"description": "",
-			"auth": null,
-			"events": null,
-			"collection": "195a3623-5c8b-47f0-9f6a-c7e39054e80a",
-			"folder": null,
-			"order": [
-				"83579885-5026-41c7-846a-accab6c087b5",
-				"05fbef6a-ca16-4aee-9a23-6c78ae5c1b42",
-				"8e439a29-2971-4740-a65e-60927e602e82",
-				"32b12b7e-6057-4063-a321-2d02639bdd2a",
-				"b468a83d-ffc1-4706-a916-bdfcfcd74aef"
-			],
-			"folders_order": [],
-			"protocolProfileBehavior": {}
-		},
-		{
-			"id": "8831f34e-b020-4019-b670-d2ba70a769e0",
 			"name": "Tutor",
-			"description": "",
-			"auth": null,
-			"events": null,
-			"collection": "195a3623-5c8b-47f0-9f6a-c7e39054e80a",
-			"folder": null,
-			"order": [
-				"93666ac8-f563-4c2d-95cc-9494e0e24f6f",
-				"f3aca742-4b44-4910-833a-8afca763a607",
-				"bee1467e-b23f-44c4-be04-d939857ce7ee",
-				"dad7bcb3-86e0-4d6d-b463-ec7fc1cd3ad9",
-				"49c86178-1171-4fb7-b5aa-d8bbfb10638b"
+			"item": [
+				{
+					"name": "GET TUTOR",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "123456"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/ApiControlNotas/tutor.php/tutor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ApiControlNotas",
+								"tutor.php",
+								"tutor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET TUTOR CI",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/ApiControlNotas/tutor.php/tutor/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ApiControlNotas",
+								"tutor.php",
+								"tutor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "INSERTAR TUTOR",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "ApiKey",
+								"value": "1234567"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"correo\": \"patricia789@gmail.com\",\n    \"cipersona\": \"13269959\",\n    \"ciestudiante\": \"13269989\",\n    \"estado\": \"1\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost/ApiControlNotas/tutor.php/tutor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ApiControlNotas",
+								"tutor.php",
+								"tutor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR TUTOR",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"correo\": \"patricia78@gmail.com\",\n    \"ciestudiante\": \"13269989\",\n    \"estado\": \"1\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost/ApiControlNotas/tutor.php/tutor/13269959",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ApiControlNotas",
+								"tutor.php",
+								"tutor",
+								"13269959"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINAR TUTOR",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost/ApiDemo/tutor.php/tutor/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ApiDemo",
+								"tutor.php",
+								"tutor",
+								""
+							]
+						}
+					},
+					"response": []
+				}
 			],
-			"folders_order": [],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Grupo",
+			"item": [
+				{
+					"name": "GET GRUPO",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "123456"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/ApiControlNotas/grupo.php/grupo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ApiControlNotas",
+								"grupo.php",
+								"grupo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET GRUPO ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/ApiControlNotas/grupo.php/grupo/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ApiControlNotas",
+								"grupo.php",
+								"grupo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "INSERTAR GRUPO",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "ApiKey",
+								"value": "1234567"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nivel\": \"Secundaria\",\n    \"descripcion\": \"5to\",\n    \"paralelo\": \"A\",\n    \"estado\": \"1\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost/ApiControlNotas/grupo.php/grupo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ApiControlNotas",
+								"grupo.php",
+								"grupo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR GRUPO",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nivel\": \"Secundaria\",\n    \"descripcion\": \"5to\",\n    \"paralelo\": \"A\",\n    \"estado\": \"1\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost/ApiControlNotas/grupo.php/grupo/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ApiControlNotas",
+								"grupo.php",
+								"grupo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINAR GRUPO",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost/ApiControlNotas/grupo.php/grupo/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ApiControlNotas",
+								"grupo.php",
+								"grupo",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Estudiante Grupo",
+			"item": [
+				{
+					"name": "GET ESTUDIANTEGRUPO",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "123456"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/ApiControlNotas/estudiantegrupo.php/estudiantegrupo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ApiControlNotas",
+								"estudiantegrupo.php",
+								"estudiantegrupo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ESTUDIANTEGRUPO CI,ID,GESTION",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/ApiControlNotas/estudiantegrupo.php/estudiantegrupo/123454444/2/2020",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ApiControlNotas",
+								"estudiantegrupo.php",
+								"estudiantegrupo",
+								"123454444",
+								"2",
+								"2020"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "INSERTAR ESTUDIANTEGRUPO",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "ApiKey",
+								"value": "1234567"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"gestion\": \"2020\",\n    \"cidestudiante\": \"345666\",\n    \"idgrupo\": \"2\",\n    \"estado\": \"1\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost/ApiControlNotas/estudiantegrupo.php/estudiantegrupo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ApiControlNotas",
+								"estudiantegrupo.php",
+								"estudiantegrupo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR ESTUDIANTEGRUPO",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"estado\": \"0\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost/ApiControlNotas/estudiantegrupo.php/estudiantegrupo/3444231/2/2020",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ApiControlNotas",
+								"estudiantegrupo.php",
+								"estudiantegrupo",
+								"3444231",
+								"2",
+								"2020"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINAR ESTUDIANTEGRUPO",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost/ApiControlNotas/estudiantegrupo.php/estudiantegrupo/3444231/2/2020",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ApiControlNotas",
+								"estudiantegrupo.php",
+								"estudiantegrupo",
+								"3444231",
+								"2",
+								"2020"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Persona",
+			"item": [
+				{
+					"name": "GET PERSONA",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "123456"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/ApiControlNotas/persona.php/persona",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ApiControlNotas",
+								"persona.php",
+								"persona"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET PERSONA ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/ApiControlNotas/persona.php/persona/345666",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ApiControlNotas",
+								"persona.php",
+								"persona",
+								"345666"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "INSERTAR PERSONA",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "ApiKey",
+								"value": "1234567"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ci\": \"13269989\",\n    \"nombre\": \"Janeth\",\n    \"apellidos\": \"Castro\",\n    \"telefono\": \"78542252\",\n    \"direccion\": \"Av. Beni\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost/ApiControlNotas/persona.php/persona",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ApiControlNotas",
+								"persona.php",
+								"persona"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR PERSONA",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"nombre\":\"Rosalia\",\n   \"apellidos\":\"Bejarano\",\n   \"telefono\":\"64453333\",\n   \"direccion\":\"C/Sucre\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost/ApiControlNotas/persona.php/persona/3195921",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ApiControlNotas",
+								"persona.php",
+								"persona",
+								"3195921"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINAR PERSONA",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost/ApiControlNotas/persona.php/persona/6339071",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ApiControlNotas",
+								"persona.php",
+								"persona",
+								"6339071"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Probando",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/ApiDemo/index.php/pruebas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ApiDemo",
+						"index.php",
+						"pruebas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Devolver un texto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/ApiDemo/index.php/probando",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"ApiDemo",
+						"index.php",
+						"probando"
+					]
+				}
+			},
+			"response": []
 		}
 	],
-	"requests": [
-		{
-			"id": "05fbef6a-ca16-4aee-9a23-6c78ae5c1b42",
-			"name": "GET PERSONA ID",
-			"url": "http://localhost/ApiControlNotas/persona.php/persona/345666",
-			"description": "",
-			"data": null,
-			"dataOptions": null,
-			"dataMode": null,
-			"headerData": [],
-			"method": "GET",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": null,
-			"folder": "44c9be5f-1053-4b3b-97f6-ae01011f982f",
-			"headers": "",
-			"pathVariables": {}
-		},
-		{
-			"id": "32b12b7e-6057-4063-a321-2d02639bdd2a",
-			"name": "Actualizar json de PERSONA",
-			"url": "http://localhost/ApiControlNotas/persona.php/persona/3195921",
-			"description": "",
-			"data": [],
-			"dataOptions": null,
-			"dataMode": "raw",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"method": "PUT",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": null,
-			"folder": "44c9be5f-1053-4b3b-97f6-ae01011f982f",
-			"rawModeData": "{\n   \"nombre\":\"Rosalia\",\n   \"apellidos\":\"Bejarano\",\n   \"telefono\":\"64453333\",\n   \"direccion\":\"C/Sucre\"\n}",
-			"headers": "Content-Type: application/json\n",
-			"pathVariables": {}
-		},
-		{
-			"id": "39be1703-4608-4d48-80a8-adc72c05ed06",
-			"name": "Actualizar ACTIVIDAD",
-			"url": "http://localhost/ApiControlNotas/actividad.php/actividad/1",
-			"description": "",
-			"data": [],
-			"dataOptions": null,
-			"dataMode": "raw",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"method": "PUT",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": null,
-			"folder": "c3ed7a1b-653a-41a9-b997-21fc36d00589",
-			"rawModeData": "{\n    \"descripcion\": \"Previa examen\",\n    \"puntaje\": \"80\",\n    \"fecha\": \"2020/02/12\",\n    \"idgrupomateria\": \"2\",\n    \"estado\":\"1\"\n}",
-			"headers": "Content-Type: application/json\n",
-			"pathVariables": {}
-		},
-		{
-			"id": "490800b3-51b4-48de-9e02-3dc5bddd8d40",
-			"name": "Eliminar ESTUDIANTEGRUPO",
-			"url": "http://localhost/ApiControlNotas/estudiantegrupo.php/estudiantegrupo/3444231/2/2020",
-			"description": "",
-			"data": [],
-			"dataOptions": null,
-			"dataMode": "params",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"method": "DELETE",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": null,
-			"folder": "30e5db1e-1b09-48f9-b7c4-09b9c7379149",
-			"headers": "Content-Type: application/json\n",
-			"pathVariables": {}
-		},
-		{
-			"id": "49c86178-1171-4fb7-b5aa-d8bbfb10638b",
-			"name": "Eliminar TUTOR",
-			"url": "http://localhost/ApiDemo/tutor.php/tutor/",
-			"description": "",
-			"data": [],
-			"dataOptions": null,
-			"dataMode": "params",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"method": "DELETE",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": null,
-			"folder": "8831f34e-b020-4019-b670-d2ba70a769e0",
-			"headers": "Content-Type: application/json\n",
-			"pathVariables": {}
-		},
-		{
-			"id": "4d91ca41-b0a6-4c77-9ac8-7e5faf1a683a",
-			"name": "Probando",
-			"url": "http://localhost/ApiDemo/index.php/pruebas",
-			"description": "",
-			"data": null,
-			"dataOptions": null,
-			"dataMode": null,
-			"headerData": [],
-			"method": "GET",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": null,
-			"folder": null,
-			"headers": "",
-			"pathVariables": {}
-		},
-		{
-			"id": "517cb753-e27c-4e3a-9c59-2bf5921bc77a",
-			"name": "Devolver un texto",
-			"url": "http://localhost/ApiDemo/index.php/probando",
-			"description": "",
-			"data": null,
-			"dataOptions": null,
-			"dataMode": null,
-			"headerData": [],
-			"method": "GET",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": null,
-			"folder": null,
-			"headers": "",
-			"pathVariables": {}
-		},
-		{
-			"id": "61593d4e-045f-4258-a956-0a72a92c8194",
-			"name": "GET ESTUDIANTEGRUPO ID",
-			"url": "http://localhost/ApiControlNotas/estudiantegrupo.php/estudiantegrupo/123454444/2/2020",
-			"description": "",
-			"data": null,
-			"dataOptions": null,
-			"dataMode": null,
-			"headerData": [],
-			"method": "GET",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": null,
-			"folder": "30e5db1e-1b09-48f9-b7c4-09b9c7379149",
-			"headers": "",
-			"pathVariables": {}
-		},
-		{
-			"id": "7064a221-5471-48c1-8005-b3ab7eb14f79",
-			"name": "Actualizar json de GRUPO",
-			"url": "http://localhost/ApiControlNotas/grupo.php/grupo/1",
-			"description": "",
-			"data": [],
-			"dataOptions": null,
-			"dataMode": "raw",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"method": "PUT",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": null,
-			"folder": "bcf4c471-f92f-4e7c-b5c4-91798d5ee898",
-			"rawModeData": "{\n    \"nivel\": \"Secundaria\",\n    \"descripcion\": \"5to\",\n    \"paralelo\": \"A\",\n    \"estado\": \"1\"\n}",
-			"headers": "Content-Type: application/json\n",
-			"pathVariables": {}
-		},
-		{
-			"id": "83579885-5026-41c7-846a-accab6c087b5",
-			"name": "GET PERSONA",
-			"url": "http://localhost/ApiControlNotas/persona.php/persona",
-			"description": "",
-			"data": null,
-			"dataOptions": null,
-			"dataMode": null,
-			"headerData": [
-				{
-					"key": "Authorization",
-					"value": "123456",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"method": "GET",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": null,
-			"folder": "44c9be5f-1053-4b3b-97f6-ae01011f982f",
-			"headers": "Authorization: 123456\n",
-			"pathVariables": {}
-		},
-		{
-			"id": "8396f697-0d1d-4540-a139-be66b773220d",
-			"name": "GET ESTUDIANTEGRUPO",
-			"url": "http://localhost/ApiControlNotas/estudiantegrupo.php/estudiantegrupo",
-			"description": "",
-			"data": null,
-			"dataOptions": null,
-			"dataMode": null,
-			"headerData": [
-				{
-					"key": "Authorization",
-					"value": "123456",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"method": "GET",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": null,
-			"folder": "30e5db1e-1b09-48f9-b7c4-09b9c7379149",
-			"headers": "Authorization: 123456\n",
-			"pathVariables": {}
-		},
-		{
-			"id": "8c9e6d58-b8df-4d24-b4d2-3fc4a7a39b98",
-			"name": "Actualizar ESTUDIANTEGRUPO",
-			"url": "http://localhost/ApiControlNotas/estudiantegrupo.php/estudiantegrupo/3444231/2/2020",
-			"description": "",
-			"data": [],
-			"dataOptions": null,
-			"dataMode": "raw",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"method": "PUT",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": null,
-			"folder": "30e5db1e-1b09-48f9-b7c4-09b9c7379149",
-			"rawModeData": "{\n    \"estado\": \"0\"\n}",
-			"headers": "Content-Type: application/json\n",
-			"pathVariables": {}
-		},
-		{
-			"id": "8e439a29-2971-4740-a65e-60927e602e82",
-			"name": "Insertar json de PERSONA",
-			"url": "http://localhost/ApiControlNotas/persona.php/persona",
-			"description": "",
-			"data": [],
-			"dataOptions": null,
-			"dataMode": "raw",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "ApiKey",
-					"value": "1234567",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"method": "POST",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": null,
-			"folder": "44c9be5f-1053-4b3b-97f6-ae01011f982f",
-			"rawModeData": "{\n    \"ci\": \"13269989\",\n    \"nombre\": \"Janeth\",\n    \"apellidos\": \"Castro\",\n    \"telefono\": \"78542252\",\n    \"direccion\": \"Av. Beni\"\n}",
-			"headers": "Content-Type: application/json\nApiKey: 1234567\n",
-			"pathVariables": {}
-		},
-		{
-			"id": "93666ac8-f563-4c2d-95cc-9494e0e24f6f",
-			"name": "GET TUTOR",
-			"url": "http://localhost/ApiControlNotas/tutor.php/tutor",
-			"description": "",
-			"data": null,
-			"dataOptions": null,
-			"dataMode": null,
-			"headerData": [
-				{
-					"key": "Authorization",
-					"value": "123456",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"method": "GET",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": null,
-			"folder": "8831f34e-b020-4019-b670-d2ba70a769e0",
-			"headers": "Authorization: 123456\n",
-			"pathVariables": {}
-		},
-		{
-			"id": "97861cc9-03b7-40bc-9c0c-f3571b5210ed",
-			"name": "GET ACTIVIDAD ID",
-			"url": "http://localhost/ApiControlNotas/actividad.php/actividad/1",
-			"description": "",
-			"data": null,
-			"dataOptions": null,
-			"dataMode": null,
-			"headerData": [],
-			"method": "GET",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": null,
-			"folder": "c3ed7a1b-653a-41a9-b997-21fc36d00589",
-			"headers": "",
-			"pathVariables": {}
-		},
-		{
-			"id": "a1fcc993-ed8e-4d61-a5b0-ab5102b983f4",
-			"name": "Insertar ESTUDIANTEGRUPO",
-			"url": "http://localhost/ApiControlNotas/estudiantegrupo.php/estudiantegrupo",
-			"description": "",
-			"data": [],
-			"dataOptions": null,
-			"dataMode": "raw",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "ApiKey",
-					"value": "1234567",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"method": "POST",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": null,
-			"folder": "30e5db1e-1b09-48f9-b7c4-09b9c7379149",
-			"rawModeData": "{\n    \"gestion\": \"2020\",\n    \"cidestudiante\": \"345666\",\n    \"idgrupo\": \"2\",\n    \"estado\": \"1\"\n}",
-			"headers": "Content-Type: application/json\nApiKey: 1234567\n",
-			"pathVariables": {}
-		},
-		{
-			"id": "a242fda6-0189-4bb6-a3ff-7fc92c9e936b",
-			"name": "Eliminar ACTUALIDAD",
-			"url": "http://localhost/ApiDemo/producto.php/productos/2",
-			"description": "",
-			"data": [],
-			"dataOptions": null,
-			"dataMode": "params",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"method": "DELETE",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": null,
-			"folder": "c3ed7a1b-653a-41a9-b997-21fc36d00589",
-			"headers": "Content-Type: application/json\n",
-			"pathVariables": {}
-		},
-		{
-			"id": "b468a83d-ffc1-4706-a916-bdfcfcd74aef",
-			"name": "Eliminar json de PERSONA",
-			"url": "http://localhost/ApiControlNotas/persona.php/persona/6339071",
-			"description": "",
-			"data": [],
-			"dataOptions": null,
-			"dataMode": "params",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"method": "DELETE",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": null,
-			"folder": "44c9be5f-1053-4b3b-97f6-ae01011f982f",
-			"headers": "Content-Type: application/json\n",
-			"pathVariables": {}
-		},
-		{
-			"id": "bee1467e-b23f-44c4-be04-d939857ce7ee",
-			"name": "Insertar TUTOR",
-			"url": "http://localhost/ApiControlNotas/tutor.php/tutor",
-			"description": "",
-			"data": [],
-			"dataOptions": null,
-			"dataMode": "raw",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "ApiKey",
-					"value": "1234567",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"method": "POST",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": null,
-			"folder": "8831f34e-b020-4019-b670-d2ba70a769e0",
-			"rawModeData": "{\n    \"correo\": \"patricia789@gmail.com\",\n    \"cipersona\": \"13269959\",\n    \"ciestudiante\": \"13269989\",\n    \"estado\": \"1\"\n}",
-			"headers": "Content-Type: application/json\nApiKey: 1234567\n",
-			"pathVariables": {}
-		},
-		{
-			"id": "d390f925-64aa-48ab-a426-af69f6993cf2",
-			"name": "GET GRUPO ID",
-			"url": "http://localhost/ApiControlNotas/grupo.php/grupo/1",
-			"description": "",
-			"data": null,
-			"dataOptions": null,
-			"dataMode": null,
-			"headerData": [],
-			"method": "GET",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": null,
-			"folder": "bcf4c471-f92f-4e7c-b5c4-91798d5ee898",
-			"headers": "",
-			"pathVariables": {}
-		},
-		{
-			"id": "dad7bcb3-86e0-4d6d-b463-ec7fc1cd3ad9",
-			"name": "Actualizar TUTOR",
-			"url": "http://localhost/ApiControlNotas/tutor.php/tutor/13269959",
-			"description": "",
-			"data": [],
-			"dataOptions": null,
-			"dataMode": "raw",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"method": "PUT",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": null,
-			"folder": "8831f34e-b020-4019-b670-d2ba70a769e0",
-			"rawModeData": "{\n    \"correo\": \"patricia78@gmail.com\",\n    \"ciestudiante\": \"13269989\",\n    \"estado\": \"1\"\n}",
-			"headers": "Content-Type: application/json\n",
-			"pathVariables": {}
-		},
-		{
-			"id": "e57ec673-d0cb-4197-93e2-cc5525c5612c",
-			"name": "Insertar json de GRUPO",
-			"url": "http://localhost/ApiControlNotas/grupo.php/grupo",
-			"description": "",
-			"data": [],
-			"dataOptions": null,
-			"dataMode": "raw",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "ApiKey",
-					"value": "1234567",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"method": "POST",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": null,
-			"folder": "bcf4c471-f92f-4e7c-b5c4-91798d5ee898",
-			"rawModeData": "{\n    \"nivel\": \"Secundaria\",\n    \"descripcion\": \"5to\",\n    \"paralelo\": \"A\",\n    \"estado\": \"1\"\n}",
-			"headers": "Content-Type: application/json\nApiKey: 1234567\n",
-			"pathVariables": {}
-		},
-		{
-			"id": "ebce2bf8-d9ef-48be-843e-ddc2bf93e825",
-			"name": "Eliminar json de GRUPO",
-			"url": "http://localhost/ApiControlNotas/grupo.php/grupo/2",
-			"description": "",
-			"data": [],
-			"dataOptions": null,
-			"dataMode": "params",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"method": "DELETE",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": null,
-			"folder": "bcf4c471-f92f-4e7c-b5c4-91798d5ee898",
-			"headers": "Content-Type: application/json\n",
-			"pathVariables": {}
-		},
-		{
-			"id": "f3aca742-4b44-4910-833a-8afca763a607",
-			"name": "GET TUTOR CI",
-			"url": "http://localhost/ApiControlNotas/tutor.php/tutor/1",
-			"description": "",
-			"data": null,
-			"dataOptions": null,
-			"dataMode": null,
-			"headerData": [],
-			"method": "GET",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": null,
-			"folder": "8831f34e-b020-4019-b670-d2ba70a769e0",
-			"headers": "",
-			"pathVariables": {}
-		},
-		{
-			"id": "f3e43a83-aeea-42fc-a9f4-b79f38166fa8",
-			"name": "GET GRUPO",
-			"url": "http://localhost/ApiControlNotas/grupo.php/grupo",
-			"description": "",
-			"data": null,
-			"dataOptions": null,
-			"dataMode": null,
-			"headerData": [
-				{
-					"key": "Authorization",
-					"value": "123456",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"method": "GET",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": null,
-			"folder": "bcf4c471-f92f-4e7c-b5c4-91798d5ee898",
-			"headers": "Authorization: 123456\n",
-			"pathVariables": {}
-		},
-		{
-			"id": "f58777fe-df8b-4fac-bed3-0d4153200672",
-			"name": "Insertar ACTIVIDAD",
-			"url": "http://localhost/ApiControlNotas/actividad.php/actividad",
-			"description": "",
-			"data": [],
-			"dataOptions": null,
-			"dataMode": "raw",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "ApiKey",
-					"value": "1234567",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"method": "POST",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": null,
-			"folder": "c3ed7a1b-653a-41a9-b997-21fc36d00589",
-			"rawModeData": "{\n    \"descripcion\": \"examen\",\n    \"puntaje\": \"50\",\n    \"fecha\": \"2020/02/02\",\n    \"idgrupomateria\": \"1\"\n}",
-			"headers": "Content-Type: application/json\nApiKey: 1234567\n",
-			"pathVariables": {}
-		},
-		{
-			"id": "ff0f146b-22ac-49e0-a9b7-5f3229baa13e",
-			"name": "GET ACTIVIDAD",
-			"url": "http://localhost/ApiControlNotas/actividad.php/actividad",
-			"description": "",
-			"data": null,
-			"dataOptions": null,
-			"dataMode": null,
-			"headerData": [
-				{
-					"key": "Authorization",
-					"value": "123456",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"method": "GET",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": null,
-			"folder": "c3ed7a1b-653a-41a9-b997-21fc36d00589",
-			"headers": "Authorization: 123456\n",
-			"pathVariables": {}
-		}
-	]
+	"protocolProfileBehavior": {}
 }

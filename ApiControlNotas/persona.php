@@ -124,7 +124,7 @@ $app->post('/persona', function() use($app, $db){
 });
 
 // ACTUALIZAR UNA PERSONA
-$app->put('/persona/:id', function($id) use($db, $app){
+$app->put('/persona/:ci', function($ci) use($db, $app){
     $json = $app->request->getBody('json');
     $data = json_decode($json, true);
 
@@ -132,10 +132,8 @@ $app->put('/persona/:id', function($id) use($db, $app){
         "nombre = '{$data["nombre"]}', ".
         "apellidos = '{$data["apellidos"]}', ".
 		"telefono = '{$data["telefono"]}', ".
-		"direccion = '{$data["direccion"]}', ".
-		"direccion = '{$data["estado"]}' WHERE ci = {$id}";
+		"direccion = '{$data["direccion"]}' WHERE ci = {$ci}";
 	
-
     $query = $db->query($sql);
 
     if($query){

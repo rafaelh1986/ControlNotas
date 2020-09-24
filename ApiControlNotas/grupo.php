@@ -147,7 +147,7 @@ $app->put('/grupo/:id', function($id) use($db, $app){
 
 });
 
-// ELIMINAR UN ACTIDAD
+// ELIMINAR UN GRUPO
 $app->delete('/grupo/:id', function($id) use($db, $app){
     $sql = 'DELETE FROM tblGrupo WHERE id = '.$id;
     $query = $db->query($sql);
