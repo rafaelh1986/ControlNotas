@@ -19,12 +19,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/actividad.php/actividad",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/actividad.php/actividad",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"actividad.php",
 								"actividad"
@@ -39,12 +40,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/actividad.php/actividad/1",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/actividad.php/actividad/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"actividad.php",
 								"actividad",
@@ -70,15 +72,16 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"descripcion\": \"examen\",\n    \"puntaje\": \"50\",\n    \"fecha\": \"2020/02/02\",\n    \"idgrupomateria\": \"1\"\n}"
+							"raw": "{\n    \"descripcion\": \"practico\",\n    \"puntaje\": \"78\",\n    \"fecha\": \"2020/02/10\",\n    \"idgrupomateria\": \"2\",\n    \"estado\": \"1\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/actividad.php/actividad",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/actividad.php/actividad",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"actividad.php",
 								"actividad"
@@ -102,12 +105,13 @@
 							"raw": "{\n    \"descripcion\": \"Previa examen\",\n    \"puntaje\": \"80\",\n    \"fecha\": \"2020/02/12\",\n    \"idgrupomateria\": \"2\",\n    \"estado\":\"1\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/actividad.php/actividad/1",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/actividad.php/actividad/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"actividad.php",
 								"actividad",
@@ -118,7 +122,7 @@
 					"response": []
 				},
 				{
-					"name": "ELIMINAR ACTUALIDAD",
+					"name": "ELIMINAR ACTIVIDAD",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -132,12 +136,13 @@
 							"formdata": []
 						},
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/actividad.php/actividad/2",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/actividad.php/actividad/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"actividad.php",
 								"actividad",
@@ -164,12 +169,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/tutor.php/tutor",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/tutor.php/tutor",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"tutor.php",
 								"tutor"
@@ -184,12 +190,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/tutor.php/tutor/1",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/tutor.php/tutor/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"tutor.php",
 								"tutor",
@@ -218,12 +225,13 @@
 							"raw": "{\n    \"correo\": \"patricia789@gmail.com\",\n    \"cipersona\": \"13269959\",\n    \"ciestudiante\": \"13269989\",\n    \"estado\": \"1\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/tutor.php/tutor",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/tutor.php/tutor",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"tutor.php",
 								"tutor"
@@ -247,12 +255,13 @@
 							"raw": "{\n    \"correo\": \"patricia78@gmail.com\",\n    \"ciestudiante\": \"13269989\",\n    \"estado\": \"1\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/tutor.php/tutor/13269959",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/tutor.php/tutor/13269959",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"tutor.php",
 								"tutor",
@@ -277,12 +286,13 @@
 							"formdata": []
 						},
 						"url": {
-							"raw": "http://localhost/ApiDemo/tutor.php/tutor/",
+							"raw": "http://localhost/ControlNotas/ApiDemo/tutor.php/tutor/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiDemo",
 								"tutor.php",
 								"tutor",
@@ -309,12 +319,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/grupo.php/grupo",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/grupo.php/grupo",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"grupo.php",
 								"grupo"
@@ -329,12 +340,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/grupo.php/grupo/1",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/grupo.php/grupo/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"grupo.php",
 								"grupo",
@@ -363,12 +375,13 @@
 							"raw": "{\n    \"nivel\": \"Secundaria\",\n    \"descripcion\": \"5to\",\n    \"paralelo\": \"A\",\n    \"estado\": \"1\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/grupo.php/grupo",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/grupo.php/grupo",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"grupo.php",
 								"grupo"
@@ -392,12 +405,13 @@
 							"raw": "{\n    \"nivel\": \"Secundaria\",\n    \"descripcion\": \"5to\",\n    \"paralelo\": \"A\",\n    \"estado\": \"1\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/grupo.php/grupo/1",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/grupo.php/grupo/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"grupo.php",
 								"grupo",
@@ -422,12 +436,13 @@
 							"formdata": []
 						},
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/grupo.php/grupo/2",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/grupo.php/grupo/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"grupo.php",
 								"grupo",
@@ -474,12 +489,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/estudiante.php/estudiante/1",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/estudiante.php/estudiante/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"estudiante.php",
 								"estudiante",
@@ -508,12 +524,13 @@
 							"raw": "{\n    \"rude\": \"9586\",\n    \"observaciones\": \"aprovado\",\n    \"fechanac\": \"2000/09/27\",\n    \"ciPersona\": \"3185921\",\n    \"estado\": \"1\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/estudiante.php/estudiante",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/estudiante.php/estudiante",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"estudiante.php",
 								"estudiante"
@@ -537,12 +554,13 @@
 							"raw": "{\n    \"nivel\": \"Secundaria\",\n    \"descripcion\": \"5to\",\n    \"paralelo\": \"A\",\n    \"estado\": \"1\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/estudiante.php/estudiante/1",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/estudiante.php/estudiante/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"estudiante.php",
 								"estudiante",
@@ -567,12 +585,13 @@
 							"formdata": []
 						},
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/estudiante.php/estudiante/2",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/estudiante.php/estudiante/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"estudiante.php",
 								"estudiante",
@@ -599,12 +618,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/estudiantegrupo.php/estudiantegrupo",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/estudiantegrupo.php/estudiantegrupo",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"estudiantegrupo.php",
 								"estudiantegrupo"
@@ -619,12 +639,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/estudiantegrupo.php/estudiantegrupo/123454444/2/2020",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/estudiantegrupo.php/estudiantegrupo/123454444/2/2020",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"estudiantegrupo.php",
 								"estudiantegrupo",
@@ -655,12 +676,13 @@
 							"raw": "{\n    \"gestion\": \"2020\",\n    \"cidestudiante\": \"345666\",\n    \"idgrupo\": \"2\",\n    \"estado\": \"1\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/estudiantegrupo.php/estudiantegrupo",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/estudiantegrupo.php/estudiantegrupo",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"estudiantegrupo.php",
 								"estudiantegrupo"
@@ -684,12 +706,13 @@
 							"raw": "{\n    \"estado\": \"0\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/estudiantegrupo.php/estudiantegrupo/3444231/2/2020",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/estudiantegrupo.php/estudiantegrupo/3444231/2/2020",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"estudiantegrupo.php",
 								"estudiantegrupo",
@@ -716,12 +739,13 @@
 							"formdata": []
 						},
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/estudiantegrupo.php/estudiantegrupo/3444231/2/2020",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/estudiantegrupo.php/estudiantegrupo/3444231/2/2020",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"estudiantegrupo.php",
 								"estudiantegrupo",
@@ -750,12 +774,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/estudianteactividad.php/estudianteactividad",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/estudianteactividad.php/estudianteactividad",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"estudianteactividad.php",
 								"estudianteactividad"
@@ -770,16 +795,18 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/estudianteactividad.php/estudianteactividad/345666",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/estudianteactividad.php/estudianteactividad/345666/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"estudianteactividad.php",
 								"estudianteactividad",
-								"345666"
+								"345666",
+								"1"
 							]
 						}
 					},
@@ -801,15 +828,16 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"promedio\": \"80\",\n    \"observaciones\": \" \",\n    \"ciestudiante\": \"345666\",\n    \"idactividad\": \"1\",\n    \"estado\": \"1\"\n}"
+							"raw": "{\n    \"promedio\": \"70\",\n    \"observaciones\": \"Regular \",\n    \"ciestudiante\": \"1232345\",\n    \"idactividad\": \"1\",\n    \"estado\": \"1\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/estudianteactividad.php/estudianteactividad",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/estudianteactividad.php/estudianteactividad",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"estudianteactividad.php",
 								"estudianteactividad"
@@ -830,15 +858,16 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"estado\": \"0\"\n}"
+							"raw": "{\n   \"promedio\": \"85\",\n    \"observaciones\": \"Bueno \",\n    \"estado\": \"1\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/estudianteactividad.php/estudianteactividad/345666/1",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/estudianteactividad.php/estudianteactividad/345666/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"estudianteactividad.php",
 								"estudianteactividad",
@@ -864,12 +893,13 @@
 							"formdata": []
 						},
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/estudianteactividad.php/estudianteactividad/345666/1",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/estudianteactividad.php/estudianteactividad/345666/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"estudianteactividad.php",
 								"estudianteactividad",
@@ -897,15 +927,16 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/persona.php/persona",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/persona.php/persona ",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"persona.php",
-								"persona"
+								"persona "
 							]
 						}
 					},
@@ -917,16 +948,17 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/persona.php/persona/345666",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/persona.php/persona/6565446",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"persona.php",
 								"persona",
-								"345666"
+								"6565446"
 							]
 						}
 					},
@@ -951,12 +983,13 @@
 							"raw": "{\n    \"ci\": \"13269989\",\n    \"nombre\": \"Janeth\",\n    \"apellidos\": \"Castro\",\n    \"telefono\": \"78542252\",\n    \"direccion\": \"Av. Beni\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/persona.php/persona",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/persona.php/persona",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"persona.php",
 								"persona"
@@ -977,19 +1010,20 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n   \"nombre\":\"Rosalia\",\n   \"apellidos\":\"Bejarano\",\n   \"telefono\":\"64453333\",\n   \"direccion\":\"C/Sucre\"\n}"
+							"raw": "{\n   \"nombre\":\"Ramiro\",\n   \"apellidos\":\"Bejarano\",\n   \"telefono\":\"64453333\",\n   \"direccion\":\"C/Sucre\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/persona.php/persona/3195921",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/persona.php/persona/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"persona.php",
 								"persona",
-								"3195921"
+								""
 							]
 						}
 					},
@@ -1010,12 +1044,13 @@
 							"formdata": []
 						},
 						"url": {
-							"raw": "http://localhost/ApiControlNotas/persona.php/persona/6339071",
+							"raw": "http://localhost/ControlNotas/ApiControlNotas/persona.php/persona/6339071",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"path": [
+								"ControlNotas",
 								"ApiControlNotas",
 								"persona.php",
 								"persona",

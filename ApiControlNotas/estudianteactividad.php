@@ -24,9 +24,9 @@ if($method == "OPTIONS") {
     die();
 }
 
-// LISTAR TODOS LOS ESTUDIANTES GRUPOS
+// LISTAR TODOS LOS ESTUDIANTES ACTIVIDADES
 /**
- * @api {get} /estuduantegrupo GET ESTUDIANTE GRUPO
+ * @api {get} /estuduanteactividades GET ESTUDIANTE ACTIVIDADES
  * @apiName GetEstudianteGrupo
  * @apiGroup EstudianteGrupo
  *
@@ -54,25 +54,25 @@ if($method == "OPTIONS") {
  *               ]
  *    }
  */
-$app->get('/estudiantegrupo', function() use($db, $app){
-    $sql = 'SELECT * FROM tblEstudianteGrupo ORDER BY gestion DESC;';
+$app->get('/estudianteactividad', function() use($db, $app){
+    $sql = 'SELECT * FROM tblEstudianteActividad ORDER BY ciEstudiante DESC;';  
     $query = $db->query($sql);
 
-    $egrupos = array();
-    while ($egrupo = $query->fetch_assoc()) {
-        $egrupos[] = $egrupo;
+    $eactividades = array();
+    while ($eactividad = $query->fetch_assoc()) {
+        $eactividades[] = $eactividad;
     }
 
     $result = array(
         'status' => 'success',
         'code'	 => 200,
-        'data' => $egrupos
+        'data' => $eactividades
     );
 
     echo json_encode($result);
 });
 
-// DEVOLVER UNA SOLO ESTUDIANTE GRUPO
+// DEVOLVER UNA SOLO ESTUDIANTE ACTIVIDAD 
 /**
  * @api {get} /estudiantegrupo/:ci/:id/:gestion GET ESTUDIANTE GRUPO CI,ID,GESTION
  * @apiName GetEstudianteGrupoID
@@ -104,32 +104,32 @@ $app->get('/estudiantegrupo', function() use($db, $app){
  *				}
  *    }
  */
-$app->get('/estudiantegrupo/:ci/:id/:gestion', function($ci,$id,$gestion) use($db, $app){
-    $sql = 'SELECT * FROM tblEstudianteGrupo WHERE ciEstudiante = '.$ci.' AND idGrupo= '.$id.' AND gestion = '.$gestion;
+$app->get('/estudianteactividad/:ci/:id', function($ci,$id) use($db, $app){
+    $sql = 'SELECT * FROM tblEstudianteActividad WHERE ciEstudiante = '.$ci.' AND idActividad= '.$id;
     $query = $db->query($sql);
 	 
     $result = array(
         'status' 	=> 'error',
         'code'		=> 404,
-        'message' 	=> 'Persona no disponible'
+        'message' 	=> 'Estudiante Actividad no disponible'
     );
 
     if($query->num_rows == 1){
-        $egrupo = $query->fetch_assoc();
+        $eactividad = $query->fetch_assoc();
 
         $result = array(
             'status' 	=> 'success',
             'code'		=> 200,
-            'data' 	=> $egrupo
+            'data' 	=> $eactividad
         );
     }
 
     echo json_encode($result);
 });
 
-// GUARDAR ESTUDIANTE GRUPO
+// GUARDAR ESTUDIANTE ACTIVIDAD
 /**
- * @api {post} /estudiantegrupo/ POST ESTUDIANTE GRUPO
+ * @api {post} /estudiantegrupo/ POST ESTUDIANTE ACTIVIDAD
  * @apiName PostEstudianteGrupo
  * @apiGroup EstudianteGrupo
  *
@@ -152,36 +152,41 @@ $app->get('/estudiantegrupo/:ci/:id/:gestion', function($ci,$id,$gestion) use($d
  *       "message": "EstudianteGrupo creado correctamente"
  *    }
  */
-$app->post('/estudiantegrupo', function() use($app, $db){
+$app->post('/estudianteactividad', function() use($app, $db){
     $result = array(
         'status' => 'error',
         'code'	 => 404,
-        'message' => 'EL Estudiante Grupo NO se ha creado'
+        'message' => 'EL Estudiante Actividad  NO se ha creado'
     );
 
     $json = $app->request->getBody('json');
         $data = json_decode($json, true);
 
-        if(!isset($data['gestion'])){
-            $data['gestion']=null;
+        if(!isset($data['promedio'])){
+            $data['promedio']=null;
+        }
+		
+		 if(!isset($data['observaciones'])){
+            $data['observaciones']=null;
         }
 
-        if(!isset($data['idestudiante'])){
-            $data['idestudiante']=null;
+        if(!isset($data['ciestudiante'])){
+            $data['ciestudiante']=null;
         }
 
-        if(!isset($data['idgrupo'])){
-            $data['idgrupo']=null;
+        if(!isset($data['idactividad'])){
+            $data['idactividad']=null;
         }
 		
 		if(!isset($data['estado'])){
             $data['estado']=null;
         }
 
-        $query = "INSERT INTO tblEstudianteGrupo VALUES(".
-            "'{$data['gestion']}',".
-            "'{$data['idestudiante']}',".
-            "'{$data['idgrupo']}',".
+        $query = "INSERT INTO tblEstudianteActividad VALUES(".
+            "'{$data['promedio']}',".
+			"'{$data['observaciones']}',".
+            "'{$data['ciestudiante']}',".
+            "'{$data['idactividad']}',".
             "'{$data['estado']}'".
             ");";
 
@@ -191,7 +196,7 @@ $app->post('/estudiantegrupo', function() use($app, $db){
             $result = array(
                 'status' => 'success',
                 'code'	 => 200,
-                'message' => 'Estudiante Grupo creado correctamente'
+                'message' => 'Estudiante Actividad creado correctamente'
             );
         }
 
@@ -199,7 +204,7 @@ $app->post('/estudiantegrupo', function() use($app, $db){
 
 });
 
-// ACTUALIZAR UN GRUPO
+// ACTUALIZAR UN ESTUDIANTE ACTIVIDAD
 /**
  * @api {put} /estudiantegrupo/:ci/:id/:gestion PUT ESTUDIANTE GRUPO
  * @apiName PutEstudianteGrupo
@@ -226,15 +231,16 @@ $app->post('/estudiantegrupo', function() use($app, $db){
  *    }
  */
 
-$app->put('/estudiantegrupo/:ci/:id/:gestion', function($ci,$id,$gestion) use($db, $app){
+$app->put('/estudianteactividad/:ci/:id', function($ci,$id) use($db, $app){
     $json = $app->request->getBody('json');
     $data = json_decode($json, true);
 
-    $sql = "UPDATE tblEstudianteGrupo SET ".
-        "gestion = '{$data["gestion"]}', ".
-        "idestudiante = '{$data["idestudiante"]}', ".
-		"idgrupo = '{$data["idgrupo"]}', ".
-		"estado = '{$data["estado"]}' WHERE ciEstudiante = {$ci} AND idGrupo = {$id} AND gestion = {$gestion}";
+    $sql = "UPDATE tblEstudianteActividad SET ".
+        "promedio = '{$data["promedio"]}', ".
+		"observaciones = '{$data["observaciones"]}', ".
+        /*"ciestudiante = '{$data["ciestudiante"]}', ".
+		"idactividad = '{$data["idactividad"]}', ".*/
+		"estado = '{$data["estado"]}' WHERE ciEstudiante = {$ci} AND idActividad = {$id}";
 	
 
     $query = $db->query($sql);
@@ -243,13 +249,13 @@ $app->put('/estudiantegrupo/:ci/:id/:gestion', function($ci,$id,$gestion) use($d
         $result = array(
             'status' 	=> 'success',
             'code'		=> 200,
-            'message' 	=> 'Estudiante Grupo se ha actualizado correctamente!!'
+            'message' 	=> 'Estudiante Actividad se ha actualizado correctamente!!'
         );
     }else{
         $result = array(
             'status' 	=> 'error',
             'code'		=> 404,
-            'message' 	=> 'Estudiante Grupo NO se ha actualizado!!'
+            'message' 	=> 'Estudiante Actividad NO se ha actualizado!!'
         );
     }
 
@@ -257,7 +263,7 @@ $app->put('/estudiantegrupo/:ci/:id/:gestion', function($ci,$id,$gestion) use($d
 
 });
 
-// ELIMINAR UN ACTIDAD
+// ELIMINAR UN ESTUDIANTE ACTIVIDAD
 /**
  * @api {delete} /estudiantegrupo/:ci/:id/:gestion DELETE ESTUDIANTE GRUPO
  * @apiName DeleteEstudianteGrupo
@@ -280,21 +286,21 @@ $app->put('/estudiantegrupo/:ci/:id/:gestion', function($ci,$id,$gestion) use($d
  *    }
  */
 
-$app->delete('/estudiantegrupo/:ci/:id/:gestion', function($ci,$id,$gestion) use($db, $app){
-    $sql = 'DELETE FROM tblEstudianteGrupo WHERE ciEstudiante='.$ci.' AND idGrupo='.$id.' AND gestion='.$gestion;
+$app->delete('/estudianteactividad/:ci/:id', function($ci,$id) use($db, $app){
+    $sql = 'DELETE FROM tblEstudianteActividad WHERE ciEstudiante='.$ci.' AND idActividad='.$id;
     $query = $db->query($sql);
 	
     if($query){
         $result = array(
             'status' 	=> 'success',
             'code'		=> 200,
-            'message' 	=> 'Estudiante Grupo se ha eliminado correctamente!!'
+            'message' 	=> 'Estudiante Actividad se ha eliminado correctamente!!'
         );
     }else{
         $result = array(
             'status' 	=> 'error',
             'code'		=> 404,
-            'message' 	=> 'Estudiante Grupo NO se ha eliminado!!'
+            'message' 	=> 'Estudiante Actividad NO se ha eliminado!!'
         );
     }
 
