@@ -2203,6 +2203,71 @@
   },
   {
     "type": "get",
+    "url": "/materia",
+    "title": "GET MATERIA",
+    "name": "GetMateria",
+    "group": "Materia",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>Estado de respuesta</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "code",
+            "description": "<p>Codigo de servidor http</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Datos sacados de la tabla tblMateria</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "data.id",
+            "description": "<p>identificador primario de la tabla</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "float",
+            "optional": false,
+            "field": "data.Descripcion",
+            "description": "<p>Nombre de la materia</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "data.estado",
+            "description": "<p>Estado de la Materia</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " HTTP/1.1 200 OK\n{\n   \"status\": \"success\",\n   \"code\": 200,\n   \"data\": [\n             \t\t  {\n                   \t\"id\": \"8\",\n                         \"descripcion\": \"Artes Plasticas\",\n                         \"estado\": \"1\"\n              \t  }\n           ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "servicios/materia.php",
+    "groupTitle": "Materia"
+  },
+  {
+    "type": "get",
     "url": "/materia/:id",
     "title": "GET MATERIA ID",
     "name": "GetMateriaID",
@@ -3391,70 +3456,5 @@
     "version": "0.0.0",
     "filename": "servicios/Tutor.php",
     "groupTitle": "Tutor"
-  },
-  {
-    "type": "get",
-    "url": "/materia",
-    "title": "GET MATERIA",
-    "name": "GetMateria",
-    "group": "materia",
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "status",
-            "description": "<p>Estado de respuesta</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "code",
-            "description": "<p>Codigo de servidor http</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "data",
-            "description": "<p>Datos sacados de la tabla tblMateria</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "data.id",
-            "description": "<p>identificador primario de la tabla</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "float",
-            "optional": false,
-            "field": "data.Descripcion",
-            "description": "<p>Nombre de la materia</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Boolean",
-            "optional": false,
-            "field": "data.estado",
-            "description": "<p>Estado de la Materia</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": " HTTP/1.1 200 OK\n{\n   \"status\": \"success\",\n   \"code\": 200,\n   \"data\": [\n             \t\t  {\n                   \t\"id\": \"8\",\n                         \"descripcion\": \"Artes Plasticas\",\n                         \"estado\": \"1\"\n              \t  }\n           ]\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "servicios/materia.php",
-    "groupTitle": "materia"
   }
 ]

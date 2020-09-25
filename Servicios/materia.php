@@ -1,7 +1,7 @@
 /**
  * @api {get} /materia GET MATERIA
  * @apiName GetMateria
- * @apiGroup materia
+ * @apiGroup Materia
  *
  * @apiSuccess {String} status Estado de respuesta 
  * @apiSuccess {Number} code  Codigo de servidor http
