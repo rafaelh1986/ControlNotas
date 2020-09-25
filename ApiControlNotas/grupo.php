@@ -258,25 +258,7 @@ $app->put('/grupo/:id', function($id) use($db, $app){
 });
 
 // ELIMINAR UN GRUPO
-/**
- * @api {delete} /grupo/:id DELETE GRUPO
- * @apiName DeleteGrupo
- * @apiGroup Grupo
- *
- * @apiParam {Number} id Identificación de la Actividad.
- *
- * @apiSuccess {String} status Estado de respuesta 
- * @apiSuccess {Number} code  Codigo de servidor http
- * @apiSuccess {String} message Mensaje de exito
- *
- * @apiSuccessExample {json} Success-Response:
- *     HTTP/1.1 200 OK
- *    {
- *       "status": "success",
- *       "code": 200,
- *       "message": "Grupo eliminado correctamente"
- *    }
- */
+
 $app->delete('/grupo/:id', function($id) use($db, $app){
     $sql = 'DELETE FROM tblGrupo WHERE id = '.$id;
     $query = $db->query($sql);

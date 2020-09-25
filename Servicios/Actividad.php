@@ -5,13 +5,13 @@
  *
  * @apiSuccess {String} status Estado de respuesta 
  * @apiSuccess {Number} code  Codigo de servidor http
- * @apiSuccess {String} data Datos sacados de la tabla actividad
+ * @apiSuccess {String} data Datos sacados de la tabla tblActividad
  *
  * @apiSuccess {Number} data.id Identificador de actividad
  * @apiSuccess {String} data.descripcion Nombre de la actividad
  * @apiSuccess {Float} data.puntaje Nota de la actividad
  * @apiSuccess {Date} data.fecha Fecha de realización de la actividad
- * @apiSuccess {String} data.idgrupomateria Identificador de la tabla GrupoMateria
+ * @apiSuccess {String} data.idgrupomateria Identificador de la tabla tblActividad
  * @apiSuccess {Boolean} data.estado Estado de la Actividad
  *
  * @apiSuccessExample {json} Success-Response:
@@ -40,13 +40,13 @@
  *
  * @apiSuccess {String} status Estado de respuesta 
  * @apiSuccess {Number} code  Codigo de servidor http
- * @apiSuccess {String} data Datos sacados de la tabla actividad
+ * @apiSuccess {String} data Datos sacados de la tabla tblActividad
  *
  * @apiSuccess {Number} data.id Identificador de actividad
  * @apiSuccess {String} data.descripcion Nombre de la actividad
  * @apiSuccess {Float} data.puntaje Nota de la actividad
  * @apiSuccess {Date} data.fecha Fecha de realización de la actividad
- * @apiSuccess {String} data.idgrupomateria Identificador de la tabla GrupoMateria
+ * @apiSuccess {String} data.idgrupomateria Identificador de GrupoMateria
  * @apiSuccess {Boolean} data.estado Estado de la Actividad
  *
  * @apiSuccessExample {json} Success-Response:

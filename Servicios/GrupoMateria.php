@@ -1,18 +1,18 @@
 /**
- * @api {get} http://localhost/ControlNotas/ApiControlNotas/GrupoMateria.php/grupomateria
+ * @api {get} /grupomateria GET GRUPO MATERIA
  * @apiName GetGrupoMateria
  * @apiGroup GrupoMateria
  *
  * @apiSuccess {String} status Estado de respuesta 
  * @apiSuccess {Number} code  Codigo de servidor http
- * @apiSuccess {String} data Datos sacados de la tabla Materia
+ * @apiSuccess {String} data Datos sacados de la tabla tblGrupoMateria
  *
  * @apiSuccess {int} data.id identificador primario de la tabla tblGrupoColumna
  * @apiSuccess {string} data.observaciones datos relevantes
  * @apiSuccess {int} data.idGrupo llave foranea de la tabla tblGrupo
  * @apiSuccess {int} data.idMateria llave foranea de la tabla tblmateria
  * @apiSuccess {string} data.ciProfesor llave foranea de la tabla tblProfesor por numero de carnet
- * @apiSuccess {Tinyind} data.estado Estado de la tabla tblMateria
+ * @apiSuccess {Boolean} data.estado Estado de la tabla tblMateria
  *
  * @apiSuccessExample {json} Success-Response:
  *     HTTP/1.1 200 OK
@@ -33,7 +33,7 @@
  */
  
  /**
- * @api {get} http://localhost/ControlNotas/ApiControlNotas/GrupoMateria.php/grupomateria/Id
+ * @api {get} /grupomateria/:Id GET GRUPO MATERIA
  * @apiName GetGrupoMateriaID
  * @apiGroup GrupoMateria
  *
@@ -43,12 +43,12 @@
  * @apiSuccess {Number} code  Codigo de servidor http
  * @apiSuccess {String} data Datos sacados de la tabla tblGrupoMateria
  *
- * @apiSuccess {int} data.id identificador primario de la tabla tblGrupoColumna
+ * @apiSuccess {int} data.id identificador primario de la tabla tblGrupoMateria
  * @apiSuccess {string} data.observaciones datos relevantes
  * @apiSuccess {int} data.idGrupo llave foranea de la tabla tblGrupo
  * @apiSuccess {int} data.idMateria llave foranea de la tabla tblmateria
  * @apiSuccess {string} data.ciProfesor llave foranea de la tabla tblProfesor por numero de carnet
- * @apiSuccess {Tinyind} data.estado Estado de la tabla tblMateria
+ * @apiSuccess {Boolean} data.estado Estado de la tabla tblMateria
  *
  * @apiSuccessExample {json} Success-Response:
  *     HTTP/1.1 200 OK
@@ -67,7 +67,7 @@
  */
  
  /**
- * @api {post} http://localhost/ControlNotas/ApiControlNotas/GrupoMateria.php/grupomateria
+ * @api {post} /grupomateria POST GRUPO MATERIA
  * @apiName PostGrupoMateria
  * @apiGroup GrupoMateria
  *
@@ -95,7 +95,7 @@
  */
  
  /**
- * @api {put} http://localhost/ControlNotas/ApiControlNotas/GrupoMateria.php/grupomateria/Id
+ * @api {put} /grupomateria/:Id PUT GRUPO MATERIA
  * @apiName PutGrupoMateria
  * @apiGroup GrupoMateria
  *
@@ -123,7 +123,7 @@
  */
  
  /**
- * @api {delete} http://localhost/ControlNotas/ApiControlNotas/GrupoMateria.php/grupomateria/Id
+ * @api {delete} /grupomateria/Id DELETE GRUPO MATERIA
  * @apiName DeleteGrupoMateria
  * @apiGroup GrupoMateria
  *

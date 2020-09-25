@@ -5,7 +5,7 @@
  *
  * @apiSuccess {String} status Estado de respuesta 
  * @apiSuccess {Number} code  Codigo de servidor http
- * @apiSuccess {String} data Datos sacados de la tabla tutor
+ * @apiSuccess {String} data Datos sacados de la tabla tblTutor
  *
  * @apiSuccess {Number} data.correo correo electronico del tutor
  * @apiSuccess {String} data.ciPersona Cedula de Identidad del tutor
@@ -38,7 +38,7 @@
  *
  * @apiSuccess {String} status Estado de respuesta 
  * @apiSuccess {Number} code  Codigo de servidor http
- * @apiSuccess {String} data Datos sacados de la tabla tutor
+ * @apiSuccess {String} data Datos sacados de la tabla tblTutor
  *
  * @apiSuccess {Number} data.correo correo electronico del tutor
  * @apiSuccess {String} data.ciPersona Cedula de Identidad del tutor

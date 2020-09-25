@@ -5,7 +5,7 @@
  *
  * @apiSuccess {String} status Estado de respuesta 
  * @apiSuccess {Number} code  Codigo de servidor http
- * @apiSuccess {String} data Datos sacados de la tabla estuduantegrupo
+ * @apiSuccess {String} data Datos sacados de la tabla tblEstuduantegrupo
  *
  * @apiSuccess {String} data.gestion Identificación de la gestión
  * @apiSuccess {String} data.ciEstudiante Cedula de Identidad del Estudiante
@@ -39,7 +39,7 @@
  *
  * @apiSuccess {String} status Estado de respuesta. 
  * @apiSuccess {Number} code  Codigo de servidor http.
- * @apiSuccess {String} data Datos sacados de la tabla estuduantegrupo.
+ * @apiSuccess {String} data Datos sacados de la tabla tblEstuduantegrupo.
  *
  * @apiSuccess {String} data.gestion Identificación de la gestión.
  * @apiSuccess {String} data.ciEstudiante Cedula de Identidad del Estudiante.

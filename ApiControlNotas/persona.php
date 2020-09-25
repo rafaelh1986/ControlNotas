@@ -96,17 +96,13 @@ $app->post('/persona', function() use($app, $db){
         if(!isset($data['direccion'])){
             $data['direccion']=null;
         }
-		if(!isset($data['estado'])){
-            $data['estado']=null;
-        }
 
         $query = "INSERT INTO tblPersona VALUES(".
 		    "'{$data['ci']}',".
             "'{$data['nombre']}',".
             "'{$data['apellidos']}',".
             "'{$data['telefono']}',".
-            "'{$data['direccion']}',".
-			"'{$data['estado']}'".
+            "'{$data['direccion']}'".
             ");";
 
         $insert = $db->query($query);
@@ -155,10 +151,10 @@ $app->put('/persona/:ci', function($ci) use($db, $app){
 });
 
 // ELIMINAR UN PERSONA
-$app->delete('/persona/:id', function($id) use($db, $app){
-    $sql = 'DELETE FROM tblPersona WHERE ci = '.$id;
+$app->delete('/persona/:ci', function($ci) use($db, $app){
+    $sql = 'DELETE FROM tblPersona WHERE ci = '.$ci.';';
     $query = $db->query($sql);
-
+echo $sql;
     if($query){
         $result = array(
             'status' 	=> 'success',

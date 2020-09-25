@@ -5,7 +5,7 @@
  *
  * @apiSuccess {String} status Estado de respuesta 
  * @apiSuccess {Number} code  Codigo de servidor http
- * @apiSuccess {String} data Datos sacados de la tabla grupo
+ * @apiSuccess {String} data Datos sacados de la tabla tblGrupo
  *
  * @apiSuccess {Number} data.id Identificador del grupo
  * @apiSuccess {String} data.nivel Nivel del grupo
@@ -38,7 +38,7 @@
  *
  * @apiSuccess {String} status Estado de respuesta 
  * @apiSuccess {Number} code  Codigo de servidor http
- * @apiSuccess {String} data Datos sacados de la tabla grupo
+ * @apiSuccess {String} data Datos sacados de la tabla tblGrupo
  *
  * @apiSuccess {Number} data.id Identificador del grupo
  * @apiSuccess {String} data.nivel Nivel del grupo

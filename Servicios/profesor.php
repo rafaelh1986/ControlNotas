@@ -1,17 +1,17 @@
  /**
- * @api {get} http://localhost/ControlNotas/ApiControlNotas/profesor.php/profesor
+ * @api {get} /profesor GET PROFESOR
  * @apiName GetProfesor
  * @apiGroup Profesor
  *
  * @apiSuccess {String} status Estado de respuesta 
  * @apiSuccess {Number} code  Codigo de servidor http
- * @apiSuccess {String} data Datos sacados de la tabla Profesor
+ * @apiSuccess {String} data Datos sacados de la tabla tblProfesor
  *
  * @apiSuccess {String} data.Categoria rango del profesor
  * @apiSuccess {float} data.Salario remuneración económica
  * @apiSuccess {String} data.Especialidad Materia que imparte
  * @apiSuccess {String} data.ciPersona Carnet de identidad, llave foranea
- * @apiSuccess {Tinyind} data.estado Estado de la tabla tblProfesor
+ * @apiSuccess {Boolean} data.estado Estado de la tabla tblProfesor
  *
  * @apiSuccessExample {json} Success-Response:
  *     HTTP/1.1 200 OK
@@ -31,7 +31,7 @@
  */
  
  /**
- * @api {get} http://localhost/ControlNotas/ApiControlNotas/profesor.php/profesor/ID
+ * @api {get} /profesor/:id GET PROFESOR ID
  * @apiName GetProfesorID
  * @apiGroup Profesor
  *
@@ -64,18 +64,17 @@
  */
  
  /**
- * @api {post} http://localhost/ControlNotas/ApiControlNotas/profesor.php/profesor
+ * @api {post} /profesor POST PROFESOR
  * @apiName PostProfesor
  * @apiGroup Profesor
  *
  * @apiParam jsonConsumo {
-					{
-						"categoria": "E5",
-						"salario": "4000",
-						"especialidad": "Matematicas",
-						"ciPersona": "4455217",
-						"estado": "1"
-					}
+					
+							"categoria": "E5",
+							"salario": "4000",
+							"especialidad": "Matematicas",
+							"ciPersona": "4455217",
+							"estado": "1"
 						 }
  *
  * @apiSuccess {String} status Estado de respuesta 
@@ -92,7 +91,7 @@
  */
  
  /**
- * @api {put} http://localhost/ControlNotas/ApiControlNotas/profesor.php/profesor/Id
+ * @api {put} /profesor/:id PUT PROFESOR 
  * @apiName PutProfesor
  * @apiGroup Profesor
  *
@@ -119,7 +118,7 @@
  */
  
  /**
- * @api {delete} http://localhost/ControlNotas/ApiControlNotas/profesor.php/profesor/Id
+ * @api {delete} /profesor/id DELETE PROFESOR
  * @apiName DeleteProfesor
  * @apiGroup Profesor
  *

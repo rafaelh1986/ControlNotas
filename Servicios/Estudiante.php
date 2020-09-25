@@ -5,7 +5,7 @@
  *
  * @apiSuccess {String} status Estado de respuesta 
  * @apiSuccess {Number} code  Codigo de servidor http
- * @apiSuccess {String} data Datos sacados de la tabla estudiante
+ * @apiSuccess {String} data Datos sacados de la tabla tblEstudiante
  *
  * @apiSuccess {Number} data.rude Identificador de estudiante
  * @apiSuccess {String} data.observacion Observacion del estudiante
@@ -39,7 +39,7 @@
  *
  * @apiSuccess {String} status Estado de respuesta 
  * @apiSuccess {Number} code  Codigo de servidor http
- * @apiSuccess {String} data Datos sacados de la tabla estudiante
+ * @apiSuccess {String} data Datos sacados de la tabla tblEstudiante
  *
  @apiSuccess {Number} data.rude Identificador de estudiante
  * @apiSuccess {String} data.observacion Observacion del estudiante

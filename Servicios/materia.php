@@ -1,15 +1,15 @@
 /**
- * @api {get} http://localhost/ControlNotas/ApiControlNotas/materia.php/materia
+ * @api {get} /materia GET MATERIA
  * @apiName GetMateria
  * @apiGroup materia
  *
  * @apiSuccess {String} status Estado de respuesta 
  * @apiSuccess {Number} code  Codigo de servidor http
- * @apiSuccess {String} data Datos sacados de la tabla Materia
+ * @apiSuccess {String} data Datos sacados de la tabla tblMateria
  *
  * @apiSuccess {Number} data.id identificador primario de la tabla
  * @apiSuccess {float} data.Descripcion Nombre de la materia
- * @apiSuccess {Tinyind} data.estado Estado de la tabla tblMateria
+ * @apiSuccess {Boolean} data.estado Estado de la Materia
  *
  * @apiSuccessExample {json} Success-Response:
  *     HTTP/1.1 200 OK
@@ -27,7 +27,7 @@
  */
  
  /**
- * @api {get} http://localhost/ControlNotas/ApiControlNotas/materia.php/materia/id
+ * @api {get} /materia/:id GET MATERIA ID
  * @apiName GetMateriaID
  * @apiGroup Materia
  *
@@ -35,11 +35,11 @@
  *
  * @apiSuccess {Number} status Estado de respuesta 
  * @apiSuccess {Number} code  Codigo de servidor http
- * @apiSuccess {String} data Datos sacados de la tabla tblProfesor
+ * @apiSuccess {String} data Datos sacados de la tabla tblMateria
  *
  * @apiSuccess {String} data.id identificador primario de la tabla
  * @apiSuccess {float} data.Descripcion Nombre de la materia
- * @apiSuccess {Tinyind} data.estado Estado de la tabla tblMateria
+ * @apiSuccess {Boolean} data.estado Estado de la Materia
  *
  * @apiSuccessExample {json} Success-Response:
  *     HTTP/1.1 200 OK
@@ -55,20 +55,20 @@
  */
  
  /**
- * @api {post} http://localhost/ControlNotas/ApiControlNotas/materia.php/materia
+ * @api {post} /materia POST MATERIA
  * @apiName PostMateria
  * @apiGroup Materia
  *
  * @apiParam jsonConsumo {
-					{
-						"descripcion": "Psicologia 2",
-                        "estado": "1"
-					}
+					
+							"descripcion": "Psicologia 2",
+							"estado": "1"
+					
 						 }
  *
  * @apiSuccess {String} status Estado de respuesta 
  * @apiSuccess {Number} code  Codigo de servidor http
-* @apiSuccess {String} message Mensaje de exito
+ * @apiSuccess {String} message Mensaje de exito
  *
  * @apiSuccessExample {json} Success-Response:
  *     HTTP/1.1 200 OK
@@ -80,7 +80,7 @@
  */
  
  /**
- * @api {put} http://localhost/ControlNotas/ApiControlNotas/materia.php/materia/Id
+ * @api {put} /materia/:id PUT MATERIA
  * @apiName PutMateria
  * @apiGroup Materia
  *
@@ -105,7 +105,7 @@
  */
  
  /**
- * @api {delete} http://localhost/ControlNotas/ApiControlNotas/materia.php/materia/Id
+ * @api {delete} /materia/Id DELETE MATERIA
  * @apiName DeleteMateria
  * @apiGroup Materia
  *

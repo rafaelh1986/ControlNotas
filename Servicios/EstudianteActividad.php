@@ -5,7 +5,7 @@
  *
  * @apiSuccess {String} status Estado de respuesta 
  * @apiSuccess {Number} code  Codigo de servidor http
- * @apiSuccess {String} data Datos sacados de la tabla estudianteactividad
+ * @apiSuccess {String} data Datos sacados de la tabla rblEstudianteactividad
  *
  * @apiSuccess {Float} data.promedio Nota del Estudiante
  * @apiSuccess {String} data.observaciones Observacion del Estudiante 
@@ -40,7 +40,7 @@
  *
  * @apiSuccess {String} status Estado de respuesta. 
  * @apiSuccess {Number} code  Codigo de servidor http.
- * @apiSuccess {String} data Datos sacados de la tabla estuduantegrupo.
+ * @apiSuccess {String} data Datos sacados de la tabla tblEstuduantegrupo.
  *
  * @apiSuccess {Float} data.promedio  Nota del Estudiante 
  * @apiSuccess {String} data.observaciones Observacion del Estudiante
