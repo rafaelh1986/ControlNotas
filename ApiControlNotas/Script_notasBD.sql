@@ -1,7 +1,7 @@
 -- --------------------------------------------------------
--- Host:                         localhost
--- Versión del servidor:         5.7.24 - MySQL Community Server (GPL)
--- SO del servidor:              Win64
+-- Host:                         remotemysql.com
+-- Versión del servidor:         8.0.13-4 - Percona Server (GPL), Release '4', Revision 'f0a32b8'
+-- SO del servidor:              debian-linux-gnu
 -- HeidiSQL Versión:             10.2.0.5599
 -- --------------------------------------------------------
 
@@ -12,144 +12,146 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 
--- Volcando estructura de base de datos para notasbd
-CREATE DATABASE IF NOT EXISTS `notasbd` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `notasBD`;
+-- Volcando estructura de base de datos para ichSCkKVhV
+CREATE DATABASE IF NOT EXISTS `ichSCkKVhV` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
+USE `ichSCkKVhV`;
 
--- Volcando estructura para tabla notasbd.tblpersona
+-- Volcando estructura para tabla ichSCkKVhV.tblPersona
 CREATE TABLE IF NOT EXISTS `tblPersona` (
-  `ci` varchar(15) NOT NULL,
-  `nombre` varchar(25) NOT NULL,
-  `apellidos` varchar(30) NOT NULL,
-  `telefono` varchar(10) DEFAULT NULL,
-  `direccion` varchar(30) NOT NULL,
+  `ci` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `nombre` varchar(25) CHARACTER SET utf32 COLLATE utf32_spanish_ci NOT NULL,
+  `apellidos` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `telefono` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `direccion` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`ci`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- La exportación de datos fue deseleccionada.
 
--- Volcando estructura para tabla notasbd.tblestudiante
-CREATE TABLE IF NOT EXISTS `tblEstudiante` (
-  `rude` varchar(20) NOT NULL,
-  `observaciones` varchar(30) DEFAULT NULL,
-  `fechaNac` date DEFAULT NULL,
-  `ciPersona` varchar(15) NOT NULL,
-  `estado` tinyint(1) DEFAULT NULL,
-  KEY `ciPersona` (`ciPersona`),
-  CONSTRAINT `tblestudiante_ibfk_1` FOREIGN KEY (`ciPersona`) REFERENCES `tblPersona` (`ci`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- La exportación de datos fue deseleccionada.
-
--- Volcando estructura para tabla notasbd.tbltutor
-CREATE TABLE IF NOT EXISTS `tblTutor` (
-  `correo` varchar(20) DEFAULT NULL,
-  `ciPersona` varchar(15) DEFAULT NULL,
-  `ciEstudiante` varchar(15) DEFAULT NULL,
-  `estado` tinyint(1) DEFAULT NULL,
-  KEY `ciPersona` (`ciPersona`),
-  KEY `ciEstudiante` (`ciEstudiante`),
-  CONSTRAINT `tbltutor_ibfk_1` FOREIGN KEY (`ciPersona`) REFERENCES `tblPersona` (`ci`),
-  CONSTRAINT `tbltutor_ibfk_2` FOREIGN KEY (`ciEstudiante`) REFERENCES `tblEstudiante` (`ciPersona`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- La exportación de datos fue deseleccionada.
-
--- Volcando estructura para tabla notasbd.tblprofesor
+-- Volcando estructura para tabla ichSCkKVhV.tblProfesor
 CREATE TABLE IF NOT EXISTS `tblProfesor` (
-  `categoria` varchar(15) NOT NULL,
+  `categoria` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `salario` float DEFAULT NULL,
-  `especialidad` varchar(20) NOT NULL,
-  `ciPersona` varchar(15) NOT NULL,
+  `especialidad` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `ciPersona` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `estado` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`ciPersona`),
+  CONSTRAINT `tblProfesor_ibfk_1` FOREIGN KEY (`ciPersona`) REFERENCES `tblPersona` (`ci`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- La exportación de datos fue deseleccionada.
+
+-- Volcando estructura para tabla ichSCkKVhV.tblEstudiante
+CREATE TABLE IF NOT EXISTS `tblEstudiante` (
+  `rude` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `observaciones` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `fechaNac` date DEFAULT NULL,
+  `ciPersona` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `estado` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`ciPersona`),
+  CONSTRAINT `tblEstudiante_ibfk_1` FOREIGN KEY (`ciPersona`) REFERENCES `tblPersona` (`ci`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- La exportación de datos fue deseleccionada.
+
+-- Volcando estructura para tabla ichSCkKVhV.tblTutor
+CREATE TABLE IF NOT EXISTS `tblTutor` (
+  `correo` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ciPersona` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ciEstudiante` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL,
   KEY `ciPersona` (`ciPersona`),
-  CONSTRAINT `tblprofesor_ibfk_1` FOREIGN KEY (`ciPersona`) REFERENCES `tblPersona` (`ci`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- La exportación de datos fue deseleccionada.
-
--- Volcando estructura para tabla notasbd.tblgrupo
-CREATE TABLE IF NOT EXISTS `tblGrupo` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nivel` varchar(20) NOT NULL,
-  `descripcion` varchar(10) NOT NULL,
-  `paralelo` varchar(5) DEFAULT NULL,
-  `estado` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- La exportación de datos fue deseleccionada.
-
--- Volcando estructura para tabla notasbd.tblmateria
-CREATE TABLE IF NOT EXISTS `tblMateria` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(20) NOT NULL,
-  `estado` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- La exportación de datos fue deseleccionada.
-
--- Volcando estructura para tabla notasbd.tblgrupomateria
-CREATE TABLE IF NOT EXISTS `tblGrupoMateria` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `observaciones` varchar(20) DEFAULT NULL,
-  `idGrupo` int(11) DEFAULT NULL,
-  `idMateria` int(11) DEFAULT NULL,
-  `ciProfesor` varchar(15) DEFAULT NULL,
-  `estado` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `idGrupo` (`idGrupo`),
-  KEY `idMateria` (`idMateria`),
-  KEY `ciProfesor` (`ciProfesor`),
-  CONSTRAINT `tblgrupomateria_ibfk_1` FOREIGN KEY (`idGrupo`) REFERENCES `tblGrupo` (`id`),
-  CONSTRAINT `tblgrupomateria_ibfk_2` FOREIGN KEY (`idMateria`) REFERENCES `tblMateria` (`id`),
-  CONSTRAINT `tblgrupomateria_ibfk_3` FOREIGN KEY (`ciProfesor`) REFERENCES `tblProfesor` (`ciPersona`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- La exportación de datos fue deseleccionada.
-
--- Volcando estructura para tabla notasbd.tblestudiantegrupo
-CREATE TABLE IF NOT EXISTS `tblEstudianteGrupo` (
-  `gestion` varchar(10) DEFAULT NULL,
-  `ciEstudiante` varchar(15) DEFAULT NULL,
-  `idGrupo` int(11) DEFAULT NULL,
-  `estado` tinyint(1) DEFAULT NULL,
   KEY `ciEstudiante` (`ciEstudiante`),
-  KEY `idGrupo` (`idGrupo`),
-  CONSTRAINT `tblestudiantegrupo_ibfk_1` FOREIGN KEY (`ciEstudiante`) REFERENCES `tblEstudiante` (`ciPersona`),
-  CONSTRAINT `tblestudiantegrupo_ibfk_2` FOREIGN KEY (`idGrupo`) REFERENCES `tblGrupo` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  CONSTRAINT `tblTutor_ibfk_1` FOREIGN KEY (`ciPersona`) REFERENCES `tblPersona` (`ci`),
+  CONSTRAINT `tblTutor_ibfk_2` FOREIGN KEY (`ciEstudiante`) REFERENCES `tblEstudiante` (`cipersona`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- La exportación de datos fue deseleccionada.
 
--- Volcando estructura para tabla notasbd.tblactividad
+-- Volcando estructura para tabla ichSCkKVhV.tblActividad
 CREATE TABLE IF NOT EXISTS `tblActividad` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(30) DEFAULT NULL,
+  `descripcion` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `puntaje` float DEFAULT NULL,
   `fecha` date DEFAULT NULL,
   `idGrupoMateria` int(11) DEFAULT NULL,
   `estado` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `idGrupoMateria` (`idGrupoMateria`),
-  CONSTRAINT `tblactividad_ibfk_1` FOREIGN KEY (`idGrupoMateria`) REFERENCES `tblGrupoMateria` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=LATIN1;
+  CONSTRAINT `tblActividad_ibfk_1` FOREIGN KEY (`idGrupoMateria`) REFERENCES `tblGrupoMateria` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- La exportación de datos fue deseleccionada.
 
--- Volcando estructura para tabla notasbd.tblestudianteactividad
+-- Volcando estructura para tabla ichSCkKVhV.tblGrupo
+CREATE TABLE IF NOT EXISTS `tblGrupo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nivel` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `descripcion` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `paralelo` varchar(5) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `estado` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- La exportación de datos fue deseleccionada.
+
+-- Volcando estructura para tabla ichSCkKVhV.tblMateria
+CREATE TABLE IF NOT EXISTS `tblMateria` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `descripcion` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `estado` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- La exportación de datos fue deseleccionada.
+
+-- Volcando estructura para tabla ichSCkKVhV.tblEstudianteActividad
 CREATE TABLE IF NOT EXISTS `tblEstudianteActividad` (
   `promedio` float DEFAULT NULL,
-  `Observaciones` varchar(30) DEFAULT NULL,
-  `ciEstudiante` varchar(15) DEFAULT NULL,
-  `idActividad` int(11) DEFAULT NULL,
+  `Observaciones` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ciEstudiante` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `idActividad` int(11) NOT NULL,
   `estado` tinyint(1) DEFAULT NULL,
-  KEY `ciEstudiante` (`ciEstudiante`),
-  KEY `idActividad` (`idActividad`),
-  CONSTRAINT `tblestudianteactividad_ibfk_1` FOREIGN KEY (`ciEstudiante`) REFERENCES `tblEstudiante` (`ciPersona`),
-  CONSTRAINT `tblestudianteactividad_ibfk_2` FOREIGN KEY (`idActividad`) REFERENCES `tblActividad` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=LATIN1;
+  PRIMARY KEY (`ciEstudiante`,`idActividad`),
+  KEY `tblEstudianteActividad_ibfk_2` (`idActividad`),
+  KEY `tblEstudianteActividad_ibfk_1` (`ciEstudiante`),
+  CONSTRAINT `tblEstudianteActividad_ibfk_1` FOREIGN KEY (`ciEstudiante`) REFERENCES `tblEstudiante` (`cipersona`),
+  CONSTRAINT `tblEstudianteActividad_ibfk_2` FOREIGN KEY (`idActividad`) REFERENCES `tblActividad` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- La exportación de datos fue deseleccionada.
+
+-- Volcando estructura para tabla ichSCkKVhV.tblEstudianteGrupo
+CREATE TABLE IF NOT EXISTS `tblEstudianteGrupo` (
+  `gestion` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `ciEstudiante` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `idGrupo` int(11) NOT NULL,
+  `estado` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`gestion`,`ciEstudiante`,`idGrupo`),
+  KEY `tblEstudianteGrupo_ibfk_1` (`ciEstudiante`),
+  KEY `tblEstudianteGrupo_ibfk_2` (`idGrupo`),
+  CONSTRAINT `tblEstudianteGrupo_ibfk_1` FOREIGN KEY (`ciEstudiante`) REFERENCES `tblEstudiante` (`cipersona`),
+  CONSTRAINT `tblEstudianteGrupo_ibfk_2` FOREIGN KEY (`idGrupo`) REFERENCES `tblGrupo` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- La exportación de datos fue deseleccionada.
+
+-- Volcando estructura para tabla ichSCkKVhV.tblGrupoMateria
+CREATE TABLE IF NOT EXISTS `tblGrupoMateria` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `observaciones` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `idGrupo` int(11) DEFAULT NULL,
+  `idMateria` int(11) DEFAULT NULL,
+  `ciProfesor` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `estado` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idGrupo` (`idGrupo`),
+  KEY `idMateria` (`idMateria`),
+  KEY `ciProfesor` (`ciProfesor`),
+  CONSTRAINT `tblGrupoMateria_ibfk_1` FOREIGN KEY (`idGrupo`) REFERENCES `tblGrupo` (`id`),
+  CONSTRAINT `tblGrupoMateria_ibfk_2` FOREIGN KEY (`idMateria`) REFERENCES `tblMateria` (`id`),
+  CONSTRAINT `tblGrupoMateria_ibfk_3` FOREIGN KEY (`ciProfesor`) REFERENCES `tblProfesor` (`cipersona`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- La exportación de datos fue deseleccionada.
 
