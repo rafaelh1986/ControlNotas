@@ -25,35 +25,7 @@ if($method == "OPTIONS") {
 }
 
 // LISTAR TODOS LOS ESTUDIANTES GRUPOS
-/**
- * @api {get} /estuduantegrupo GET ESTUDIANTE GRUPO
- * @apiName GetEstudianteGrupo
- * @apiGroup EstudianteGrupo
- *
- * @apiSuccess {String} status Estado de respuesta 
- * @apiSuccess {Number} code  Codigo de servidor http
- * @apiSuccess {String} data Datos sacados de la tabla estuduantegrupo
- *
- * @apiSuccess {String} data.gestion Identificación de la gestión
- * @apiSuccess {String} data.ciEstudiante Cedula de Identidad del Estudiante
- * @apiSuccess {Number} data.idGrupo Identificador del Grupo
- * @apiSuccess {Boolean} data.estado Estado de EstudianteGrupo
- *
- * @apiSuccessExample {json} Success-Response:
- *     HTTP/1.1 200 OK
- *    {
- *       "status": "success",
- *       "code": 200,
- *       "data": [
- *               	{
- *						"gestion": "2020",
- *						"ciEstudiante": "345666",
- *						"idGrupo": "2",
- *						"estado": "1"
- *					}
- *               ]
- *    }
- */
+
 $app->get('/estudiantegrupo', function() use($db, $app){
     $sql = 'SELECT * FROM tblEstudianteGrupo ORDER BY gestion DESC;';
     $query = $db->query($sql);
